@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# منع فهرسة الصفحات غير المهمة
+Disallow: /css/
+Disallow: /js/
+Disallow: /images/
+
+# تحديد موقع Sitemap
+Sitemap: https://konouz.sa/sitemap.xml

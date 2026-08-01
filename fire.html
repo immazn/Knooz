@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>أنظمة الحريق المعتمدة | كنوز الإنشاء التجارية - رشاشات، إنذار، طفايات</title>
+    <meta name="description"
+        content="أنظمة حريق معتمدة من الدفاع المدني في كنوز الإنشاء التجارية. رشاشات أوتوماتيكية، أجهزة إنذار، طفايات، ومضخات حريق بأعلى معايير السلامة.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        media="all" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* التصميم الخاص بصفحة أنظمة الحريق */
+        .fire-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 140px 7% 80px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fire-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/hero/fire.jpg') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .fire-hero>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        .fire-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .fire-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: translateX(-5px);
+        }
+
+        /* الأقسام المتناوبة */
+        .fire-categories {
+            padding: 5rem 7%;
+            background: var(--gray-bg);
+        }
+
+        .category-row {
+            display: flex;
+            align-items: stretch;
+            gap: 3rem;
+            margin-bottom: 5rem;
+            background: var(--card-bg);
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .category-row:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        /* ===== تثبيت ارتفاع الصورة الرئيسية ===== */
+        .category-image {
+            flex: 0 0 45%;
+            min-height: 380px;
+            max-height: 380px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+
+        .category-row:hover .category-image img {
+            transform: scale(1.05);
+        }
+
+        /* طبقة تدرج لتحسين مظهر الصورة */
+        .category-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.15), transparent);
+            pointer-events: none;
+        }
+
+        .category-content {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .category-content h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .category-content h3 i {
+            font-size: 2rem;
+        }
+
+        .category-desc {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        /* شارة معتمد */
+        .certified-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(249, 115, 22, 0.15);
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            width: fit-content;
+        }
+
+        /* ===== التصميم الجديد لعرض المنتجات ===== */
+        .products-showcase {
+            margin-top: 0.5rem;
+        }
+
+        .products-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.6rem 1.6rem;
+            border-radius: 40px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 1rem;
+        }
+
+        .products-toggle:hover {
+            background: var(--primary-dark);
+            transform: scale(1.02);
+        }
+
+        .products-toggle i {
+            transition: transform 0.4s ease;
+        }
+
+        .products-toggle.active i {
+            transform: rotate(180deg);
+        }
+
+        .products-grid-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .products-grid-wrapper.show {
+            max-height: 2000px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 0.5rem 0;
+        }
+
+        /* بطاقة المنتج */
+        .product-card {
+            background: var(--gray-light);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        .product-card-image {
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            background: var(--gray-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover .product-card-image img {
+            transform: scale(1.08);
+        }
+
+        .product-card-image .placeholder-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.5;
+        }
+
+        .product-card-body {
+            padding: 0.8rem 1rem 1rem;
+        }
+
+        .product-card-body h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0 0 0.2rem 0;
+        }
+
+        .product-card-body .product-badge {
+            display: inline-block;
+            margin-top: 0.4rem;
+            font-size: 0.7rem;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 0.15rem 0.8rem;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+
+        /* شارة معتمد داخل البطاقة */
+        .product-card-body .certified-mini {
+            display: inline-block;
+            margin-top: 0.3rem;
+            font-size: 0.65rem;
+            background: rgba(34, 197, 94, 0.15);
+            color: #16a34a;
+            padding: 0.1rem 0.6rem;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+
+        .product-card-body .certified-mini i {
+            font-size: 0.6rem;
+            margin-left: 0.2rem;
+        }
+
+        .product-card.expanded .product-card-details {
+            max-height: 150px;
+            opacity: 1;
+            padding-top: 0.5rem;
+        }
+
+        .product-card-details {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.35s ease;
+            border-top: 1px solid var(--border-light);
+            padding: 0 1rem 0;
+        }
+
+        .product-card-details p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0.4rem 0;
+            line-height: 1.5;
+        }
+
+        /* ===== تحسينات للشاشات الصغيرة ===== */
+        @media (max-width: 992px) {
+            .category-image {
+                flex: 0 0 40%;
+                min-height: 300px;
+                max-height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .category-row,
+            .category-row.reverse {
+                flex-direction: column;
+            }
+
+            .category-image {
+                flex: 0 0 auto;
+                min-height: 220px;
+                max-height: 220px;
+                width: 100%;
+            }
+
+            .fire-categories {
+                padding: 3rem 5%;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 0.8rem;
+            }
+
+            .product-card-image {
+                height: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.6rem;
+            }
+
+            .product-card-body h4 {
+                font-size: 0.85rem;
+            }
+
+            .category-image {
+                min-height: 180px;
+                max-height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar" id="navbar">
+        <div class="logo" id="logoLink" style="cursor: pointer;">
+            <div class="logo-icon">
+                <i class="fas fa-gem"></i>
+            </div>
+            <div class="logo-text">
+                <span class="logo-main">كنوز</span>
+                <span class="logo-sub">الإنشاء التجارية</span>
+            </div>
+        </div>
+        <div class="nav-controls">
+            <div class="dark-mode-toggle">
+                <i class="fas fa-moon" id="darkModeIcon"></i>
+            </div>
+            <div class="lang-switch">
+                <button class="lang-btn" id="langToggle">EN</button>
+            </div>
+        </div>
+        <nav id="mainNav">
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html">من نحن</a>
+            <a href="products.html">الأقسام</a>
+            <a href="projects.html">المشاريع</a>
+            <a href="contact.html" class="contact-btn">تواصل معنا</a>
+        </nav>
+        <div class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="fire-hero">
+        <a href="products.html" class="back-btn"><i class="fas fa-arrow-right"></i> <span data-key="fireBackBtn">العودة
+                للأقسام</span></a>
+        <h1 data-key="fireHeroTitle">أنظمة الحريق <i class="fas fa-fire-extinguisher"></i></h1>
+        <p data-key="fireHeroDesc">أنظمة حريق معتمدة من الدفاع المدني بأعلى معايير السلامة والأمان للمشاريع السكنية
+            والتجارية</p>
+    </section>
+
+    <section class="fire-categories">
+
+        <!-- ========== 1. أنظمة الرش الآلي ========== -->
+        <div class="category-row">
+            <div class="category-image">
+                <img src="images/fire/1.jpg" alt="أنظمة الرش الآلي">
+            </div>
+            <div class="category-content">
+                <h3 data-key="fireCat1Title"><i class="fas fa-tint"></i> أنظمة الرش الآلي</h3>
+                <div class="certified-badge" data-key="fireCat1Badge"><i class="fas fa-check-circle"></i> معتمدة من
+                    الدفاع المدني</div>
+                <p class="category-desc" data-key="fireCat1Desc">رشاشات حريق أوتوماتيكية بكفاءة عالية للاستجابة السريعة
+                    عند اندلاع الحرائق.</p>
+
+                <div class="products-showcase">
+                    <button class="products-toggle" data-target="sprinklers-grid">
+                        <span data-key="fireShowProducts">عرض المنتجات</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="sprinklers-grid" class="products-grid-wrapper">
+                        <div class="products-grid">
+                            <div class="product-card" data-img="images/fire/rshash/1.jpeg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct1">رشاشات حريق معلقة تايكو</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                    <div class="certified-mini"><i class="fas fa-check-circle"></i> <span
+                                            data-key="fireCertified">معتمد</span></div>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct1Desc">رشاشات حريق معلقة للسقف بدرجات حرارة متعددة.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/rshash/2.jpeg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct2">رشاشات حريق نائمة</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                    <div class="certified-mini"><i class="fas fa-check-circle"></i> <span
+                                            data-key="fireCertified">معتمد</span></div>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct2Desc">رشاشات نائمة للأسقف المخفية بتصميم أنيق.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/rshash/3.avif">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct3">رشاشات حريق جانبية</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                    <div class="certified-mini"><i class="fas fa-check-circle"></i> <span
+                                            data-key="fireCertified">معتمد</span></div>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct3Desc">رشاشات جانبية للتركيب على الجدران في الأماكن الضيقة.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/rshash/4.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct4">رشاشات الحريق المفتوحة</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                    <div class="certified-mini"><i class="fas fa-check-circle"></i> <span
+                                            data-key="fireCertified">معتمد</span></div>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct4Desc">رشاشات مفتوحة لأنظمة الإطفاء بالمياه.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/rshash/5.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct5">رشاشات متعددة الحرارة</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                    <div class="certified-mini"><i class="fas fa-check-circle"></i> <span
+                                            data-key="fireCertified">معتمد</span></div>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct5Desc">رشاشات بدرجات حرارة مختلفة (68°C، 93°C، 141°C).</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/rshash/6.avif">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct6">صمامات فحص الرشاشات</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct6Desc">صمامات فحص ومراقبة لأنظمة الرشاشات.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 2. أنظمة الإنذار ========== -->
+        <div class="category-row reverse">
+            <div class="category-image">
+                <img src="images/fire/2.jpg" alt="أنظمة الإنذار">
+            </div>
+            <div class="category-content">
+                <h3 data-key="fireCat2Title"><i class="fas fa-bell"></i> أنظمة الإنذار</h3>
+                <div class="certified-badge" data-key="fireCat2Badge"><i class="fas fa-check-circle"></i> تقنية حديثة
+                </div>
+                <p class="category-desc" data-key="fireCat2Desc">أجهزة إنذار ذكية للكشف المبكر عن الحرائق وحماية الأرواح
+                    والممتلكات.</p>
+
+                <div class="products-showcase">
+                    <button class="products-toggle" data-target="alarms-grid">
+                        <span data-key="fireShowProducts">عرض المنتجات</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="alarms-grid" class="products-grid-wrapper">
+                        <div class="products-grid">
+                            <div class="product-card" data-img="images/fire/alert/1.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct7">كاشفات الدخان</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                    <div class="certified-mini"><i class="fas fa-check-circle"></i> <span
+                                            data-key="fireCertified">معتمد</span></div>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct7Desc">كاشفات دخان أيونية وبصرية عالية الحساسية.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/alert/2.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct8">كاشفات الحرارة</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                    <div class="certified-mini"><i class="fas fa-check-circle"></i> <span
+                                            data-key="fireCertified">معتمد</span></div>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct8Desc">كاشفات حرارة ثابتة ومتزايدة للحماية من الحرائق.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/alert/3.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct9"> كاشفات اللهب هانيويل</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                    <div class="certified-mini"><i class="fas fa-check-circle"></i> <span
+                                            data-key="fireCertified">معتمد</span></div>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct9Desc">كاشفات اللهب بالأشعة فوق البنفسجية وتحت الحمراء.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/alert/4.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct10">كاشفات أول أكسيد الكربون</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct10Desc">كاشفات الغاز السام للكشف المبكر عن تسربات أول أكسيد
+                                        الكربون.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/alert/5.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct11">أجراس الإنذار</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct11Desc">أجراس إنذار عالية الصوت لتنبيه الجميع.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/alert/6.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct12">صفارات الإنذار</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct12Desc">صفارات إنذار إلكترونية بأصوات متعددة.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 3. طفايات الحريق ========== -->
+        <div class="category-row">
+            <div class="category-image">
+                <img src="images/fire/3.jpg" alt="طفايات الحريق">
+            </div>
+            <div class="category-content">
+                <h3 data-key="fireCat3Title"><i class="fas fa-fire-extinguisher"></i> طفايات الحريق</h3>
+                <div class="certified-badge" data-key="fireCat3Badge"><i class="fas fa-check-circle"></i> شهادة جودة
+                </div>
+                <p class="category-desc" data-key="fireCat3Desc">طفايات حريق بأنواعها المختلفة لمكافحة جميع أنواع
+                    الحرائق.</p>
+
+                <div class="products-showcase">
+                    <button class="products-toggle" data-target="extinguishers-grid">
+                        <span data-key="fireShowProducts">عرض المنتجات</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="extinguishers-grid" class="products-grid-wrapper">
+                        <div class="products-grid">
+                            <div class="product-card" data-img="images/fire/hncxschncxschncx/1.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct13">طفاية بودرة جافة</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                    <div class="certified-mini"><i class="fas fa-check-circle"></i> <span
+                                            data-key="fireCertified">معتمد</span></div>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct13Desc">طفاية بودرة جافة متعددة الاستخدامات لجميع أنواع
+                                        الحرائق.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/hncxschncxschncx/2.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct14">طفاية CO2</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                    <div class="certified-mini"><i class="fas fa-check-circle"></i> <span
+                                            data-key="fireCertified">معتمد</span></div>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct14Desc">طفاية ثاني أكسيد الكربون للحرائق الكهربائية والمعدات
+                                        الحساسة.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/hncxschncxschncx/3.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct15">طفاية رغوية</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                    <div class="certified-mini"><i class="fas fa-check-circle"></i> <span
+                                            data-key="fireCertified">معتمد</span></div>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct15Desc">طفاية رغوية للحرائق السائلة والزيوت المشتعلة.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/hncxschncxschncx/4.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct16">طفاية مياه مضغوطة</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct16Desc">طفاية مياه مضغوطة للحرائق العادية (خشب، ورق، أقمشة).
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/hncxschncxschncx/5.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct17">طفاية مواد كيميائية جافة</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                    <div class="certified-mini"><i class="fas fa-check-circle"></i> <span
+                                            data-key="fireCertified">معتمد</span></div>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct17Desc">طفاية مواد كيميائية جافة للحرائق الكهربائية
+                                        والغازية.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/hncxschncxschncx/6.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct18">طفايات عجلات (متحركة)</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                    <div class="certified-mini"><i class="fas fa-check-circle"></i> <span
+                                            data-key="fireCertified">معتمد</span></div>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct18Desc">طفايات كبيرة على عجلات للمنشآت والمستودعات.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 4. مواسير وأنابيب الحريق ========== -->
+        <div class="category-row reverse">
+            <div class="category-image">
+                <img src="images/fire/4.jpg" alt="مواسير وأنابيب الحريق">
+            </div>
+            <div class="category-content">
+                <h3 data-key="fireCat4Title"><i class="fas fa-charging-station"></i> مواسير الحريق</h3>
+                <div class="certified-badge" data-key="fireCat4Badge"><i class="fas fa-check-circle"></i> مقاومة للحريق
+                </div>
+                <p class="category-desc" data-key="fireCat4Desc">مواسير وأنابيب خاصة بأنظمة الحريق عالية الضغط والمتانة.
+                </p>
+
+                <div class="products-showcase">
+                    <button class="products-toggle" data-target="pipes-grid">
+                        <span data-key="fireShowProducts">عرض المنتجات</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="pipes-grid" class="products-grid-wrapper">
+                        <div class="products-grid">
+                            <div class="product-card" data-img="images/fire/pipe/1.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct19">مواسير حريق مجلفنة</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                    <div class="certified-mini"><i class="fas fa-check-circle"></i> <span
+                                            data-key="fireCertified">معتمد</span></div>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct19Desc">مواسير مجلفنة لأنظمة الحريق مقاومة للصدأ.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/pipe/2.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct20">مواسير حديد الزهر</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct20Desc">مواسير حديد زهر عالية التحمل والمتانة.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/pipe/3.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct21">مواسير نحاسية</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct21Desc">مواسير نحاسية لأنظمة الحريق والرشاشات.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/pipe/4.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct22">مواسير CPVC</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                    <div class="certified-mini"><i class="fas fa-check-circle"></i> <span
+                                            data-key="fireCertified">معتمد</span></div>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct22Desc">مواسير CPVC البلاستيكية لأنظمة الحريق.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/pipe/5.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct23">وصلات وملحقات الحريق</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct23Desc">وصلات وملحقات مواسير الحريق بجميع الأحجام.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/pipe/6.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct24">محابس حريق</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                    <div class="certified-mini"><i class="fas fa-check-circle"></i> <span
+                                            data-key="fireCertified">معتمد</span></div>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct24Desc">محابس حريق للتحكم في تدفق مياه الإطفاء.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 5. مضخات الحريق ========== -->
+        <div class="category-row">
+            <div class="category-image">
+                <img src="images/fire/6.jpg" alt="مضخات الحريق">
+            </div>
+            <div class="category-content">
+                <h3 data-key="fireCat5Title"><i class="fas fa-pump-water"></i> مضخات الحريق</h3>
+                <div class="certified-badge" data-key="fireCat5Badge"><i class="fas fa-check-circle"></i> قدرات عالية
+                </div>
+                <p class="category-desc" data-key="fireCat5Desc">مضخات حريق قوية لتزويد شبكات الحريق بالمياه اللازمة.
+                </p>
+
+                <div class="products-showcase">
+                    <button class="products-toggle" data-target="pumps-grid">
+                        <span data-key="fireShowProducts">عرض المنتجات</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="pumps-grid" class="products-grid-wrapper">
+                        <div class="products-grid">
+                            <div class="product-card" data-img="images/fire/firepumps/1.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct25">مضخات حريق أفقية</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                    <div class="certified-mini"><i class="fas fa-check-circle"></i> <span
+                                            data-key="fireCertified">معتمد</span></div>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct25Desc">مضخات أفقية بأنظمة الدفع الأفقي.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/fire/firepumps/2.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="fireProduct26">مضخات حريق عمودية</h4>
+                                    <span class="product-badge" data-key="fireAvailable">متوفر</span>
+                                    <div class="certified-mini"><i class="fas fa-check-circle"></i> <span
+                                            data-key="fireCertified">معتمد</span></div>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="fireProduct26Desc">مضخات عمودية لتوفير المساحة وكفاءة عالية.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="footer-grid">
+            <div>
+                <h3 data-key="footerTitle">كنوز الإنشاء التجارية</h3>
+                <p data-key="footerDesc">متخصصون في توريد مواد السباكة والكهرباء وأنظمة الحريق للمشاريع السكنية
+                    والتجارية، نعمل على تحقيق أعلى معايير الجودة والموثوقية.</p>
+            </div>
+            <div>
+                <h3 data-key="footerLinks">روابط الموقع</h3>
+                <a href="index.html" data-key="home">الرئيسية</a>
+                <a href="about.html">من نحن</a>
+                <a href="projects.html">المشاريع</a>
+                <a href="products.html">الأقسام</a>
+            </div>
+            <div>
+                <h3 data-key="contactTitle">تواصل معنا</h3>
+                <p><i class="fab fa-whatsapp"></i> واتساب: <span dir="ltr">+966 55 123 4567</span></p>
+                <p><i class="far fa-envelope"></i> info@konouz.sa</p>
+                <p><i class="fas fa-map-marker-alt"></i> <span data-key="location">مكة - المملكة العربية
+                        السعودية</span></p>
+            </div>
+        </div>
+        <p class="copyright">© 2025 <span data-key="copyright">كنوز الإنشاء التجارية. جميع الحقوق محفوظة</span></p>
+    </footer>
+
+    <a href="https://wa.me/966551234567" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // ===== 1. زر عرض/إخفاء المنتجات =====
+            const toggles = document.querySelectorAll('.products-toggle');
+
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const targetId = this.getAttribute('data-target');
+                    const targetGrid = document.getElementById(targetId);
+                    const allGrids = document.querySelectorAll('.products-grid-wrapper');
+                    const allToggles = document.querySelectorAll('.products-toggle');
+
+                    if (targetGrid.classList.contains('show')) {
+                        targetGrid.classList.remove('show');
+                        this.classList.remove('active');
+                    } else {
+                        allGrids.forEach(grid => grid.classList.remove('show'));
+                        allToggles.forEach(t => t.classList.remove('active'));
+
+                        targetGrid.classList.add('show');
+                        this.classList.add('active');
+                    }
+                });
+            });
+
+            // ===== 2. فتح أول قسم بشكل افتراضي =====
+            const firstToggle = document.querySelector('.products-toggle');
+            if (firstToggle) {
+                setTimeout(() => {
+                    firstToggle.click();
+                }, 300);
+            }
+
+            // ===== 3. تحميل الصور في البطاقات =====
+            const productCards = document.querySelectorAll('.product-card');
+
+            productCards.forEach(card => {
+                const imgSrc = card.getAttribute('data-img');
+                const imageContainer = card.querySelector('.product-card-image');
+
+                if (imgSrc && imageContainer) {
+                    const img = document.createElement('img');
+                    img.src = imgSrc;
+                    img.alt = card.querySelector('.product-card-body h4')?.innerText || 'صورة المنتج';
+                    img.loading = 'lazy';
+
+                    imageContainer.innerHTML = '';
+                    imageContainer.appendChild(img);
+                }
+            });
+
+            // ===== 4. الضغط على البطاقة لإظهار التفاصيل =====
+            productCards.forEach(card => {
+                card.addEventListener('click', function (e) {
+                    if (e.target.closest('.detail-btn') || e.target.closest('a')) return;
+
+                    const grid = this.closest('.products-grid');
+                    if (grid) {
+                        const siblings = grid.querySelectorAll('.product-card.expanded');
+                        siblings.forEach(s => {
+                            if (s !== this) s.classList.remove('expanded');
+                        });
+                    }
+
+                    this.classList.toggle('expanded');
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>

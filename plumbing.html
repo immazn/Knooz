@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>مواد السباكة الاحترافية | كنوز الإنشاء التجارية - أنابيب، محابس، مضخات</title>
+    <meta name="description"
+        content="أفضل مواد السباكة في السعودية من كنوز الإنشاء التجارية. نوفر أنابيب PPR، PVC، محابس، مضخات، وحلول متكاملة لشبكات المياه والصرف الصحي.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        media="all" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* التصميم الخاص بصفحة السباكة */
+        .plumbing-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 140px 7% 80px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .plumbing-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/hero/pump.jpg') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .plumbing-hero>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        .plumbing-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .plumbing-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: translateX(-5px);
+        }
+
+        /* الأقسام المتناوبة */
+        .plumbing-categories {
+            padding: 5rem 7%;
+            background: var(--gray-bg);
+        }
+
+        .category-row {
+            display: flex;
+            align-items: stretch;
+            gap: 3rem;
+            margin-bottom: 5rem;
+            background: var(--card-bg);
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .category-row:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .category-image {
+            flex: 0 0 45%;
+            min-height: 380px;
+            max-height: 380px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+
+        .category-row:hover .category-image img {
+            transform: scale(1.05);
+        }
+
+        .category-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.15), transparent);
+            pointer-events: none;
+        }
+
+        .category-content {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .category-content h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .category-content h3 i {
+            font-size: 2rem;
+        }
+
+        .category-desc {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .products-showcase {
+            margin-top: 0.5rem;
+        }
+
+        .products-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.6rem 1.6rem;
+            border-radius: 40px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 1rem;
+        }
+
+        .products-toggle:hover {
+            background: var(--primary-dark);
+            transform: scale(1.02);
+        }
+
+        .products-toggle i {
+            transition: transform 0.4s ease;
+        }
+
+        .products-toggle.active i {
+            transform: rotate(180deg);
+        }
+
+        .products-grid-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .products-grid-wrapper.show {
+            max-height: 2000px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 0.5rem 0;
+        }
+
+        .product-card {
+            background: var(--gray-light);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        .product-card-image {
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            background: var(--gray-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover .product-card-image img {
+            transform: scale(1.08);
+        }
+
+        .product-card-image .placeholder-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.5;
+        }
+
+        .product-card-body {
+            padding: 0.8rem 1rem 1rem;
+        }
+
+        .product-card-body h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0 0 0.2rem 0;
+        }
+
+        .product-card-body .product-badge {
+            display: inline-block;
+            margin-top: 0.4rem;
+            font-size: 0.7rem;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 0.15rem 0.8rem;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+
+        .product-card.expanded .product-card-details {
+            max-height: 150px;
+            opacity: 1;
+            padding-top: 0.5rem;
+        }
+
+        .product-card-details {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.35s ease;
+            border-top: 1px solid var(--border-light);
+            padding: 0 1rem 0;
+        }
+
+        .product-card-details p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0.4rem 0;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 992px) {
+            .category-image {
+                flex: 0 0 40%;
+                min-height: 300px;
+                max-height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .category-row,
+            .category-row.reverse {
+                flex-direction: column;
+            }
+
+            .category-image {
+                flex: 0 0 auto;
+                min-height: 220px;
+                max-height: 220px;
+                width: 100%;
+            }
+
+            .plumbing-categories {
+                padding: 3rem 5%;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 0.8rem;
+            }
+
+            .product-card-image {
+                height: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.6rem;
+            }
+
+            .product-card-body h4 {
+                font-size: 0.85rem;
+            }
+
+            .category-image {
+                min-height: 180px;
+                max-height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar" id="navbar">
+        <div class="logo" id="logoLink" style="cursor: pointer;">
+            <div class="logo-icon">
+                <i class="fas fa-gem"></i>
+            </div>
+            <div class="logo-text">
+                <span class="logo-main">كنوز</span>
+                <span class="logo-sub">الإنشاء التجارية</span>
+            </div>
+        </div>
+        <div class="nav-controls">
+            <div class="dark-mode-toggle">
+                <i class="fas fa-moon" id="darkModeIcon"></i>
+            </div>
+            <div class="lang-switch">
+                <button class="lang-btn" id="langToggle">EN</button>
+            </div>
+        </div>
+        <nav id="mainNav">
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html">من نحن</a>
+            <a href="products.html">الأقسام</a>
+            <a href="projects.html">المشاريع</a>
+            <a href="contact.html" class="contact-btn">تواصل معنا</a>
+        </nav>
+        <div class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="plumbing-hero">
+        <a href="products.html" class="back-btn"><i class="fas fa-arrow-right"></i> <span
+                data-key="plumbingBackBtn">العودة للأقسام</span></a>
+        <h1 data-key="plumbingHeroTitle">مواد السباكة <i class="fas fa-wrench"></i></h1>
+        <p data-key="plumbingHeroDesc">أحدث وأجود مواد السباكة للمشاريع السكنية والتجارية من أفضل الماركات العالمية</p>
+    </section>
+
+    <section class="plumbing-categories">
+
+        <!-- ========== 1. المواسير ========== -->
+        <div class="category-row">
+            <div class="category-image">
+                <img src="images/سباكه/pipes.jpg" alt="المواسير">
+            </div>
+            <div class="category-content">
+                <h3 data-key="plumbingCat1Title"><i class="fas fa-water"></i> المواسير</h3>
+                <p class="category-desc" data-key="plumbingCat1Desc">تشكيلة كاملة من المواسير عالية الجودة لمختلف
+                    التطبيقات الصناعية والسكنية.</p>
+
+                <div class="products-showcase">
+                    <button class="products-toggle" data-target="pipes-grid">
+                        <span data-key="plumbingShowProducts">عرض المنتجات</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="pipes-grid" class="products-grid-wrapper">
+                        <div class="products-grid">
+                            <div class="product-card" data-img="images/سباكه/pvc-pipes.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productPipe1">مواسير PVC</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productPipe1Desc">مواسير بولي فينيل كلوريد متعددة الاستخدامات.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/ppr-pipes.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productPipe2">مواسير PPR</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productPipe2Desc">مواسير بولى بروبلين مقاومة للحرارة والضغط.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/cpvc-pipes.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productPipe3">مواسير CPVC</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productPipe3Desc">مواسير كلوريد البولي فينيل كلوريد للمياه الساخنة.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/hdpe-pipes.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productPipe4">مواسير HDPE</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productPipe4Desc">مواسير بولي إيثيلين عالي الكثافة للمشاريع الكبرى.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/galvanized-pipes.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productPipe5">مواسير مجلفنة</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productPipe5Desc">مواسير حديد مجلفن مقاومة للصدأ والتآكل.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/drainage-pipes.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productPipe6">مواسير صرف صحي</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productPipe6Desc">مواسير صرف صحي عالية الجودة ومقاومة للانسدادات.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 2. الوصلات ========== -->
+        <div class="category-row reverse">
+            <div class="category-image">
+                <img src="images/سباكه/Elbow.jpg" alt="الوصلات">
+            </div>
+            <div class="category-content">
+                <h3 data-key="plumbingCat2Title"><i class="fas fa-link"></i> الوصلات</h3>
+                <p class="category-desc" data-key="plumbingCat2Desc">جميع أنواع الوصلات لتوصيل الأنابيب باحترافية ومتانة
+                    عالية.</p>
+
+                <div class="products-showcase">
+                    <button class="products-toggle" data-target="fittings-grid">
+                        <span data-key="plumbingShowProducts">عرض المنتجات</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="fittings-grid" class="products-grid-wrapper">
+                        <div class="products-grid">
+                            <div class="product-card" data-img="images/سباكه/elbow-fitting.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productFitting1">كوع (Elbow)</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productFitting1Desc">كوع بزوايا مختلفة لتغيير اتجاه الأنابيب.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/tee-fitting.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productFitting2">تي (Tee)</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productFitting2Desc">وصلة تي لتفرع الأنابيب بثلاثة اتجاهات.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/coupling-fitting.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productFitting3">جلبة (Coupling)</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productFitting3Desc">وصلة لتوصيل أنبوبين بنفس القطر.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/reducer-fitting.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productFitting4">مخفض (Reducer)</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productFitting4Desc">وصلة لتوصيل أنبوبين بأقطار مختلفة.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/union-fitting.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productFitting5">وصلة يونيون (Union)</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productFitting5Desc">وصلة قابلة للفك لتسهيل الصيانة.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/end-cap.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productFitting6">غطاء نهاية (End Cap)</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productFitting6Desc">غطاء لإغلاق نهاية الأنابيب.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 3. المحابس ========== -->
+        <div class="category-row">
+            <div class="category-image">
+                <img src="images/سباكه/valvs.jpg" alt="المحابس">
+            </div>
+            <div class="category-content">
+                <h3 data-key="plumbingCat3Title"><i class="fas fa-tint"></i> المحابس</h3>
+                <p class="category-desc" data-key="plumbingCat3Desc">تحكم دقيق في تدفق المياه بفضل محابس عالية الجودة
+                    ومقاومة للتآكل.</p>
+
+                <div class="products-showcase">
+                    <button class="products-toggle" data-target="valves-grid">
+                        <span data-key="plumbingShowProducts">عرض المنتجات</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="valves-grid" class="products-grid-wrapper">
+                        <div class="products-grid">
+                            <div class="product-card" data-img="images/سباكه/ball-valve.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productValve1">محبس كروي</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productValve1Desc">محبس كروي للتحكم السريع في تدفق المياه.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/gate-valve.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productValve2">محبس بوابة</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productValve2Desc">محبس بوابة للتحكم الكامل في تدفق المياه.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/check-valve.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productValve3">محبس عدم رجوع</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productValve3Desc">يمنع تدفق المياه في الاتجاه العكسي.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/angle-valve.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productValve4">محبس زاوية</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productValve4Desc">محبس بزاوية 90 درجة للتركيبات الضيقة.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/butterfly-valve.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productValve5">محبس فراشة</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productValve5Desc">محبس فراشة للتحكم في التدفقات الكبيرة.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/float-valve.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productValve6">محبس عوامة</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productValve6Desc">محبس أوتوماتيكي لخزانات المياه.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 4. الصرف الصحي ========== -->
+        <div class="category-row reverse">
+            <div class="category-image">
+                <img src="images/سباكه/Sanitation.jpg" alt="الصرف الصحي">
+            </div>
+            <div class="category-content">
+                <h3 data-key="plumbingCat4Title"><i class="fas fa-toilet"></i> الصرف الصحي</h3>
+                <p class="category-desc" data-key="plumbingCat4Desc">حلول متكاملة لأنظمة الصرف الصحي لمنع الروائح وضمان
+                    التدفق السلس.</p>
+
+                <div class="products-showcase">
+                    <button class="products-toggle" data-target="drainage-grid">
+                        <span data-key="plumbingShowProducts">عرض المنتجات</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="drainage-grid" class="products-grid-wrapper">
+                        <div class="products-grid">
+                            <div class="product-card" data-img="images/سباكه/floor-drain.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productDrain1">مصرف أرضي</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productDrain1Desc">مصرف أرضي للمطابخ والحمامات.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/p-trap.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productDrain2">مصيدة P</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productDrain2Desc">مصيدة على شكل P لمنع الروائح.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/s-trap.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productDrain3">مصيدة S</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productDrain3Desc">مصيدة على شكل S للحمامات والمطابخ.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/cleanout-plug.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productDrain4">فتحة تنظيف</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productDrain4Desc">فتحة تنظيف لصيانة أنابيب الصرف.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/odor-trap.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productDrain5">مصيدة روائح</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productDrain5Desc">مصيدة متخصصة لمنع الروائح الكريهة.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 5. مواد التركيب ========== -->
+        <div class="category-row">
+            <div class="category-image">
+                <img src="images/سباكه/materials.jpg" alt="مواد التركيب">
+            </div>
+            <div class="category-content">
+                <h3 data-key="plumbingCat5Title"><i class="fas fa-tools"></i> مواد التركيب</h3>
+                <p class="category-desc" data-key="plumbingCat5Desc">كل ما يحتاجه السباك المحترف من مواد عزل ولصق
+                    وتثبيت.</p>
+
+                <div class="products-showcase">
+                    <button class="products-toggle" data-target="tools-grid">
+                        <span data-key="plumbingShowProducts">عرض المنتجات</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="tools-grid" class="products-grid-wrapper">
+                        <div class="products-grid">
+                            <div class="product-card" data-img="images/سباكه/ptfe-tape.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productTool1">شريط تيفلون</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productTool1Desc">شريط تيفلون لعزل الوصلات ومنع التسرب.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/pvc-glue.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productTool2">غراء PVC</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productTool2Desc">غراء خاص لتثبيت مواسير PVC.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/pipe-clamps.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productTool3">مشابك الأنابيب</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productTool3Desc">مشابك لتثبيت الأنابيب على الجدران.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/pipe-insulation.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productTool4">عزل الأنابيب</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productTool4Desc">مواد عزل للأنابيب للحفاظ على الحرارة.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/thermal-insulation.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productTool5">مواد عزل حراري</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productTool5Desc">مواد عزل حراري عالية الجودة للأنابيب.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 6. أنظمة المياه ========== -->
+        <div class="category-row reverse">
+            <div class="category-image">
+                <img src="images/سباكه/watersys.jpg" alt="أنظمة المياه">
+            </div>
+            <div class="category-content">
+                <h3 data-key="plumbingCat6Title"><i class="fas fa-pump-water"></i> أنظمة المياه</h3>
+                <p class="category-desc" data-key="plumbingCat6Desc">مضخات وخزانات وفلاتر لضمان كفاءة وأمان شبكة المياه
+                    لديك.</p>
+
+                <div class="products-showcase">
+                    <button class="products-toggle" data-target="systems-grid">
+                        <span data-key="plumbingShowProducts">عرض المنتجات</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="systems-grid" class="products-grid-wrapper">
+                        <div class="products-grid">
+                            <div class="product-card" data-img="images/سباكه/water-pump.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productSystem1">مضخة مياه</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productSystem1Desc">مضخة مياه عالية الكفاءة للمنازل والمشاريع.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/pressure-regulator.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productSystem2">منظم الضغط</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productSystem2Desc">منظم ضغط المياه للحفاظ على تدفق منتظم.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/سباكه/water-filter.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="productSystem3">فلتر مياه</h4>
+                                    <span class="product-badge" data-key="plumbingAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="productSystem3Desc">فلتر مياه لتنقية المياه من الشوائب.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="footer-grid">
+            <div>
+                <h3 data-key="footerTitle">كنوز الإنشاء التجارية</h3>
+                <p data-key="footerDesc">متخصصون في توريد مواد السباكة والكهرباء وأنظمة الحريق للمشاريع السكنية
+                    والتجارية، نعمل على تحقيق أعلى معايير الجودة والموثوقية.</p>
+            </div>
+            <div>
+                <h3 data-key="footerLinks">روابط الموقع</h3>
+                <a href="index.html" data-key="home">الرئيسية</a>
+                <a href="about.html">من نحن</a>
+                <a href="projects.html">المشاريع</a>
+                <a href="products.html">الأقسام</a>
+            </div>
+            <div>
+                <h3 data-key="contactTitle">تواصل معنا</h3>
+                <p><i class="fab fa-whatsapp"></i> واتساب: <span dir="ltr">+966 55 123 4567</span></p>
+                <p><i class="far fa-envelope"></i> info@konouz.sa</p>
+                <p><i class="fas fa-map-marker-alt"></i> <span data-key="location">مكة - المملكة العربية
+                        السعودية</span></p>
+            </div>
+        </div>
+        <p class="copyright">© 2025 <span data-key="copyright">كنوز الإنشاء التجارية. جميع الحقوق محفوظة</span></p>
+    </footer>
+
+    <a href="https://wa.me/966551234567" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // ===== 1. زر عرض/إخفاء المنتجات =====
+            const toggles = document.querySelectorAll('.products-toggle');
+
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const targetId = this.getAttribute('data-target');
+                    const targetGrid = document.getElementById(targetId);
+                    const allGrids = document.querySelectorAll('.products-grid-wrapper');
+                    const allToggles = document.querySelectorAll('.products-toggle');
+
+                    if (targetGrid.classList.contains('show')) {
+                        targetGrid.classList.remove('show');
+                        this.classList.remove('active');
+                    } else {
+                        allGrids.forEach(grid => grid.classList.remove('show'));
+                        allToggles.forEach(t => t.classList.remove('active'));
+
+                        targetGrid.classList.add('show');
+                        this.classList.add('active');
+                    }
+                });
+            });
+
+            // ===== 2. فتح أول قسم بشكل افتراضي =====
+            const firstToggle = document.querySelector('.products-toggle');
+            if (firstToggle) {
+                setTimeout(() => {
+                    firstToggle.click();
+                }, 300);
+            }
+
+            // ===== 3. تحميل الصور في البطاقات =====
+            const productCards = document.querySelectorAll('.product-card');
+
+            productCards.forEach(card => {
+                const imgSrc = card.getAttribute('data-img');
+                const imageContainer = card.querySelector('.product-card-image');
+
+                if (imgSrc && imageContainer) {
+                    const img = document.createElement('img');
+                    img.src = imgSrc;
+                    img.alt = card.querySelector('.product-card-body h4')?.innerText || 'صورة المنتج';
+                    img.loading = 'lazy';
+
+                    imageContainer.innerHTML = '';
+                    imageContainer.appendChild(img);
+                }
+            });
+
+            // ===== 4. الضغط على البطاقة لإظهار التفاصيل =====
+            productCards.forEach(card => {
+                card.addEventListener('click', function (e) {
+                    if (e.target.closest('.detail-btn') || e.target.closest('a')) return;
+
+                    const grid = this.closest('.products-grid');
+                    if (grid) {
+                        const siblings = grid.querySelectorAll('.product-card.expanded');
+                        siblings.forEach(s => {
+                            if (s !== this) s.classList.remove('expanded');
+                        });
+                    }
+
+                    this.classList.toggle('expanded');
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>

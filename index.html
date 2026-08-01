@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>كنوز الإنشاء التجارية | مورد معتمد لمواد السباكة والكهرباء وأنظمة الحريق في السعودية</title>
+    <meta name="description"
+        content="كنوز الإنشاء التجارية - مورد معتمد لمواد السباكة والكهرباء وأنظمة الحريق في السعودية. نوفر حلولاً متكاملة للمشاريع السكنية والتجارية بأعلى معايير الجودة.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        media="all" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ---------- تحسينات بسيطة على الصفحة الرئيسية فقط ---------- */
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 7vw, 5rem);
+        }
+
+        .hero-content h1 .highlight {
+            background: linear-gradient(90deg, var(--primary), #fbbf24);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+        }
+
+        .hero-btn {
+            box-shadow: 0 14px 35px -10px rgba(249, 115, 22, 0.5);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 22px 40px -12px rgba(249, 115, 22, 0.6);
+        }
+
+        .dept {
+            transition: var(--transition);
+        }
+
+        .dept:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .dept-img img {
+            transition: transform 0.6s ease;
+        }
+
+        .dept:hover .dept-img img {
+            transform: scale(1.05);
+        }
+
+        .project-card {
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .project-card img {
+            transition: transform 0.5s;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .brand-logos img {
+            transition: var(--transition);
+        }
+
+        .brand-logos img:hover {
+            transform: scale(1.06);
+            opacity: 1;
+            filter: grayscale(0);
+        }
+
+        /* تحسين مؤشر التمرير */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            animation: bounceDown 2s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        .scroll-indicator i {
+            font-size: 1.1rem;
+        }
+
+        @keyframes bounceDown {
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(6px);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 950px) {
+            .hero-content h1 {
+                font-size: clamp(2.5rem, 6vw, 4rem);
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="navbar" id="navbar">
+        <div class="logo" id="logoLink" style="cursor: pointer;">
+            <div class="logo-icon">
+                <i class="fas fa-gem"></i>
+            </div>
+            <div class="logo-text">
+                <span class="logo-main">كنوز</span>
+                <span class="logo-sub">الإنشاء التجارية</span>
+            </div>
+        </div>
+        <div class="nav-controls">
+            <div class="dark-mode-toggle">
+                <i class="fas fa-moon" id="darkModeIcon"></i>
+            </div>
+            <div class="lang-switch">
+                <button class="lang-btn" id="langToggle">EN</button>
+            </div>
+        </div>
+        <nav id="mainNav">
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html">من نحن</a>
+            <a href="products.html">الأقسام</a>
+            <a href="projects.html">المشاريع</a>
+            <a href="contact.html" class="contact-btn">تواصل معنا</a>
+        </nav>
+        <div class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero"
+        style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero.jpg'); background-size: cover; background-position: center;">
+        <div class="hero-content">
+            <h1>
+                كنوز <span class="highlight">الإنشاء</span> التجارية
+            </h1>
+            <p>حلول متكاملة في مواد السباكة والكهرباء وأنظمة الحريق بأعلى معايير الجودة والموثوقية</p>
+            <div class="hero-buttons">
+                <a href="contact.html" class="hero-btn">
+                    تواصل معنا <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator"
+            onclick="document.getElementById('departments').scrollIntoView({behavior:'smooth'})">
+            <span>تمرير</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ===== DEPARTMENTS ===== -->
+    <section class="departments" id="departments">
+        <div class="section-title reveal" data-key="deptTitle">المنتجات</div>
+
+        <div class="dept reveal">
+            <div class="dept-text">
+                <h3 data-key="plumbingTitle">مواد السباكة</h3>
+                <p data-key="plumbingDesc">نوفر أحدث تقنيات السباكة للمشاريع السكنية والتجارية، أنابيب PPR، fittings،
+                    مضخات، وأدوات صحية فائقة الجودة من أفضل الماركات العالمية. حلول ذكية لشبكات المياه والصرف الصحي.</p>
+                <a href="plumbing.html" class="dept-btn">استكشف القسم <i class="fas fa-chevron-left"></i></a>
+            </div>
+            <div class="dept-img">
+                <img src="images/pump2.jpeg" alt="مواد السباكة">
+            </div>
+        </div>
+
+        <div class="dept reverse reveal">
+            <div class="dept-text">
+                <h3 data-key="electricTitle">المواد الكهربائية</h3>
+                <p data-key="electricDesc">جميع مستلزمات الكهرباء من كابلات معزولة، قواطع، لوحات توزيع، ومفاتيح ذكية.
+                    نعتمد أعلى معايير الأمان والكفاءة لتلبية متطلبات المشاريع الضخمة والمباني السكنية.</p>
+                <a href="electric.html" class="dept-btn">استكشف القسم <i class="fas fa-chevron-left"></i></a>
+            </div>
+            <div class="dept-img">
+                <img src="images/elc2.jpeg" alt="المواد الكهربائية">
+            </div>
+        </div>
+
+        <div class="dept reveal">
+            <div class="dept-text">
+                <h3 data-key="fireTitle">أنظمة الحريق</h3>
+                <p data-key="fireDesc">أنظمة حريق معتمدة من الدفاع المدني، رشاشات أوتوماتيكية، أجهزة إنذار متطورة،
+                    وطفايات عالية الجودة. نضمن السلامة الكاملة لمشروعاتك بأحدث المواصفات العالمية.</p>
+                <a href="fire.html" class="dept-btn">استكشف القسم <i class="fas fa-chevron-left"></i></a>
+            </div>
+            <div class="dept-img">
+                <img src="images/fire2.jpeg" alt="أنظمة الحريق">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BRANDS ===== -->
+    <section class="brands">
+        <h2 class="section-title reveal" data-key="brandsTitle">العلامات التجارية</h2>
+        <div class="brand-logos">
+            <img src="images/hnwell.png" alt="brand">
+            <img src="images/saudi.png" alt="brand">
+            <img src="images/Grohe.png" alt="brand">
+            <img src="images/legrand.png" alt="brand">
+            <img src="images/schnidder.png" alt="brand">
+            <img src="images/tyco.png" alt="brand">
+            <img src="images/Wavin.png" alt="brand">
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="projects" id="projects">
+        <h2 class="section-title reveal" data-key="projectsTitle">المشاريع</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-category">فنادق</div>
+                <img src="images/projects/Mena/1.jpg" alt="مشروع فندقي">
+            </div>
+            <div class="project-card">
+                <div class="project-category">مصانع</div>
+                <img src="images/projects/Ajiad/1.jpg" alt="مشروع صناعي">
+            </div>
+            <div class="project-card">
+                <div class="project-category">كومباوند</div>
+                <img src="images/projects/bsatin/1.jpg" alt="مشروع كومباوند">
+            </div>
+        </div>
+        <div class="projects-btn-wrapper">
+            <a href="projects.html" class="projects-view-btn">عرض جميع المشاريع <i class="fas fa-arrow-left"></i></a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="contact">
+        <div class="footer-grid">
+            <div>
+                <h3>كنوز الإنشاء التجارية</h3>
+                <p data-key="footerDesc">متخصصون في توريد مواد السباكة والكهرباء وأنظمة الحريق للمشاريع السكنية
+                    والتجارية، نعمل على تحقيق أعلى معايير الجودة والموثوقية.</p>
+            </div>
+            <div>
+                <h3 data-key="footerLinks">روابط الموقع</h3>
+                <a href="index.html" data-key="home">الرئيسية</a>
+                <a href="about.html">من نحن</a>
+                <a href="projects.html">المشاريع</a>
+                <a href="products.html">الأقسام</a>
+            </div>
+            <div>
+                <h3 data-key="contactTitle">تواصل معنا</h3>
+                <p><i class="fab fa-whatsapp"></i> واتساب: <span dir="ltr">+966 55 123 4567</span></p>
+                <p><i class="far fa-envelope"></i> info@konouz.sa</p>
+                <p><i class="fas fa-map-marker-alt"></i> <span data-key="location">الرياض - المملكة العربية
+                        السعودية</span></p>
+            </div>
+        </div>
+        <p class="copyright">© 2025 <span data-key="copyright">كنوز الإنشاء التجارية. جميع الحقوق محفوظة</span></p>
+    </footer>
+
+    <!-- ===== WHATSAPP ===== -->
+    <a href="https://wa.me/966551234567" class="whatsapp-btn" target="_blank" aria-label="تواصل عبر واتساب">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="js/script.js"></script>
+    <script>
+        // ===================== REVEAL (محسّن) =====================
+        function reveal() {
+            document.querySelectorAll('.reveal').forEach((el, index) => {
+                const top = el.getBoundingClientRect().top;
+                if (top < window.innerHeight - 120) {
+                    setTimeout(() => {
+                        el.classList.add('active');
+                    }, index * 80);
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        document.addEventListener('DOMContentLoaded', reveal);
+
+        // ===================== SCROLL INDICATOR =====================
+        document.querySelector('.scroll-indicator')?.addEventListener('click', () => {
+            document.getElementById('departments').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>

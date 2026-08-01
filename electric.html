@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>المواد الكهربائية | كنوز الإنشاء التجارية - كابلات، قواطع، لوحات توزيع</title>
+    <meta name="description"
+        content="مواد كهربائية عالية الجودة من كنوز الإنشاء التجارية. كابلات، قواطع، لوحات توزيع، مفاتيح، وأنظمة إنارة LED للمشاريع السكنية والتجارية.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        media="all" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* التصميم الخاص بصفحة الكهرباء */
+        .electric-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 140px 7% 80px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .electric-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/hero/electric.jpg') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .electric-hero>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        .electric-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .electric-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: translateX(-5px);
+        }
+
+        /* الأقسام المتناوبة */
+        .electric-categories {
+            padding: 5rem 7%;
+            background: var(--gray-bg);
+        }
+
+        .category-row {
+            display: flex;
+            align-items: stretch;
+            gap: 3rem;
+            margin-bottom: 5rem;
+            background: var(--card-bg);
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .category-row:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        /* ===== تثبيت ارتفاع الصورة الرئيسية ===== */
+        .category-image {
+            flex: 0 0 45%;
+            min-height: 380px;
+            max-height: 380px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+
+        .category-row:hover .category-image img {
+            transform: scale(1.05);
+        }
+
+        /* طبقة تدرج لتحسين مظهر الصورة */
+        .category-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.15), transparent);
+            pointer-events: none;
+        }
+
+        .category-content {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .category-content h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .category-content h3 i {
+            font-size: 2rem;
+        }
+
+        .category-desc {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        /* ===== التصميم الجديد لعرض المنتجات ===== */
+        .products-showcase {
+            margin-top: 0.5rem;
+        }
+
+        .products-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.6rem 1.6rem;
+            border-radius: 40px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 1rem;
+        }
+
+        .products-toggle:hover {
+            background: var(--primary-dark);
+            transform: scale(1.02);
+        }
+
+        .products-toggle i {
+            transition: transform 0.4s ease;
+        }
+
+        .products-toggle.active i {
+            transform: rotate(180deg);
+        }
+
+        .products-grid-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .products-grid-wrapper.show {
+            max-height: 2000px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 0.5rem 0;
+        }
+
+        /* بطاقة المنتج */
+        .product-card {
+            background: var(--gray-light);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        .product-card-image {
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            background: var(--gray-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover .product-card-image img {
+            transform: scale(1.08);
+        }
+
+        .product-card-image .placeholder-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.5;
+        }
+
+        .product-card-body {
+            padding: 0.8rem 1rem 1rem;
+        }
+
+        .product-card-body h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0 0 0.2rem 0;
+        }
+
+        .product-card-body .product-code {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .product-card-body .product-badge {
+            display: inline-block;
+            margin-top: 0.4rem;
+            font-size: 0.7rem;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 0.15rem 0.8rem;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+
+        .product-card.expanded .product-card-details {
+            max-height: 150px;
+            opacity: 1;
+            padding-top: 0.5rem;
+        }
+
+        .product-card-details {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.35s ease;
+            border-top: 1px solid var(--border-light);
+            padding: 0 1rem 0;
+        }
+
+        .product-card-details p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0.4rem 0;
+            line-height: 1.5;
+        }
+
+        .product-card-details .detail-btn {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-top: 0.2rem;
+            text-decoration: none;
+        }
+
+        .product-card-details .detail-btn i {
+            font-size: 0.6rem;
+            margin-left: 0.3rem;
+        }
+
+        /* ===== تحسينات للشاشات الصغيرة ===== */
+        @media (max-width: 992px) {
+            .category-image {
+                flex: 0 0 40%;
+                min-height: 300px;
+                max-height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .category-row,
+            .category-row.reverse {
+                flex-direction: column;
+            }
+
+            .category-image {
+                flex: 0 0 auto;
+                min-height: 220px;
+                max-height: 220px;
+                width: 100%;
+            }
+
+            .electric-categories {
+                padding: 3rem 5%;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 0.8rem;
+            }
+
+            .product-card-image {
+                height: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.6rem;
+            }
+
+            .product-card-body h4 {
+                font-size: 0.85rem;
+            }
+
+            .category-image {
+                min-height: 180px;
+                max-height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar" id="navbar">
+        <div class="logo" id="logoLink" style="cursor: pointer;">
+            <div class="logo-icon">
+                <i class="fas fa-gem"></i>
+            </div>
+            <div class="logo-text">
+                <span class="logo-main">كنوز</span>
+                <span class="logo-sub">الإنشاء التجارية</span>
+            </div>
+        </div>
+        <div class="nav-controls">
+            <div class="dark-mode-toggle">
+                <i class="fas fa-moon" id="darkModeIcon"></i>
+            </div>
+            <div class="lang-switch">
+                <button class="lang-btn" id="langToggle">EN</button>
+            </div>
+        </div>
+        <nav id="mainNav">
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html">من نحن</a>
+            <a href="products.html">الأقسام</a>
+            <a href="projects.html">المشاريع</a>
+            <a href="contact.html" class="contact-btn">تواصل معنا</a>
+        </nav>
+        <div class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="electric-hero">
+        <a href="products.html" class="back-btn"><i class="fas fa-arrow-right"></i> <span
+                data-key="electricBackBtn">العودة للأقسام</span></a>
+        <h1 data-key="electricHeroTitle">المواد الكهربائية <i class="fas fa-bolt"></i></h1>
+        <p data-key="electricHeroDesc">أحدث وأجود المواد الكهربائية للمشاريع السكنية والتجارية من أفضل الماركات العالمية
+        </p>
+    </section>
+
+    <section class="electric-categories">
+
+        <!-- ========== 1. الأسلاك والكابلات ========== -->
+        <div class="category-row">
+            <div class="category-image">
+                <img src="images/electric/cables.jpg" alt="الأسلاك والكابلات">
+            </div>
+            <div class="category-content">
+                <h3 data-key="electricCat1Title"><i class="fas fa-plug"></i> الأسلاك والكابلات</h3>
+                <p class="category-desc" data-key="electricCat1Desc">كابلات وأسلاك كهربائية عالية الجودة بمواصفات قياسية
+                    لمختلف الاستخدامات.</p>
+
+                <div class="products-showcase">
+                    <button class="products-toggle" data-target="wires-grid">
+                        <span data-key="electricShowProducts">عرض المنتجات</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="wires-grid" class="products-grid-wrapper">
+                        <div class="products-grid">
+                            <div class="product-card" data-img="images/electric/cables/Al-fnar.webp">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct1">أسلاك نحاسية الفنار</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct1Desc">أسلاك نحاسية عالية النقاوة معزولة بطبقات متينة.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/cables/xlpe.webp">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct2">كابلات XLPE الجهد المنخفض</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct2Desc">كابلات للجهد المنخفض (حتى 1000 فولت).</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/cables/cat6.webp">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct3">كابلات الإنترنت CAT6</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct3Desc">كابلات للجهد المتوسط للمشاريع الكبرى.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/cables/almnum.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct4">كابلات الألمنيوم</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct4Desc">كابلات ألمنيوم خفيفة الوزن ومنخفضة التكلفة.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/cables/control.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct5">كابلات التحكم</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct5Desc">كابلات مخصصة لأنظمة التحكم والأتمتة.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/cables/grund.webp">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct6">كابلات الأرضي</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct6Desc">كابلات التأريض للحماية من الصدمات الكهربائية.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 2. القواطع الكهربائية ========== -->
+        <div class="category-row reverse">
+            <div class="category-image">
+                <img src="images/electric/breakers.jpg" alt="القواطع الكهربائية">
+            </div>
+            <div class="category-content">
+                <h3 data-key="electricCat2Title"><i class="fas fa-shield-alt"></i> القواطع الكهربائية</h3>
+                <p class="category-desc" data-key="electricCat2Desc">قواطع كهربائية معتمدة لحماية الدوائر والمعدات من
+                    الأعطال.</p>
+
+                <div class="products-showcase">
+                    <button class="products-toggle" data-target="breakers-grid">
+                        <span data-key="electricShowProducts">عرض المنتجات</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="breakers-grid" class="products-grid-wrapper">
+                        <div class="products-grid">
+                            <div class="product-card" data-img="images/electric/breakers/mcb.webp">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct7">قاطع MCB شنايدر</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct7Desc">قاطع تيار مصغر للحماية من الحمل الزائد والدوائر
+                                        القصيرة.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/breakers/rccb.png">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct8">قاطع RCCB شنايدر</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct8Desc">قاطع للحماية من تسرب التيار الكهربائي للأرضي.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/breakers/RCBO.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct9">قاطع مدمج RCBO شنايدر</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct9Desc">قاطع يجمع بين وظائف MCB و RCCB في جهاز واحد.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/breakers/mccb.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct10">قاطع MCCB شنايدر</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct10Desc">قاطع رئيسي قالب للتيارات العالية في اللوحات
+                                        الرئيسية.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/breakers/ACB.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct11">قاطع هوائي ACB</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct11Desc">قاطع هوائي للتيارات العالية جداً في المشاريع
+                                        الكبرى.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/breakers/fuse.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct12">فيوزات كهربائية</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct12Desc">فيوزات منزلقة للحماية الإضافية للدوائر
+                                        الكهربائية.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 3. اللوحات الكهربائية ========== -->
+        <div class="category-row">
+            <div class="category-image">
+                <img src="images/electric/boards.jpg" alt="اللوحات الكهربائية">
+            </div>
+            <div class="category-content">
+                <h3 data-key="electricCat3Title"><i class="fas fa-tachometer-alt"></i> اللوحات الكهربائية</h3>
+                <p class="category-desc" data-key="electricCat3Desc">لوحات توزيع كهربائية بأنواعها المختلفة للمشاريع
+                    الصغيرة والكبيرة.</p>
+
+                <div class="products-showcase">
+                    <button class="products-toggle" data-target="panels-grid">
+                        <span data-key="electricShowProducts">عرض المنتجات</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="panels-grid" class="products-grid-wrapper">
+                        <div class="products-grid">
+                            <div class="product-card" data-img="images/electric/board/acti9.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct13">لوحات توزيع ACTI9 شنايدر</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct13Desc">لوحات توزيع رئيسية للمشاريع الكبرى بمواصفات
+                                        عالية.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/board/لوحات توزيع فرعية.png">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct14">لوحات توزيع فرعية</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct14Desc">لوحات توزيع فرعية للتوزيع الداخلي في المباني.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/board/auto.jpg.avif">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct15">لوحات تحكم أوتوماتيكية</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct15Desc">لوحات تحكم أوتوماتيكية مع مبدلات ATS.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/board/Resbo.jpeg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct16">لوحات توزيع RESBO</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct16Desc">لوحات مكثفات لتحسين معامل القدرة وتوفير الطاقة.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/board/exit.webp">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct17">لوحات إنارة الطوارئ</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct17Desc">لوحات خاصة بأنظمة إنارة الطوارئ في المباني.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/board/boox.avif">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct18">صناديق التوزيع البلاستيكية</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct18Desc">صناديق توزيع بلاستيكية خفيفة وعازلة للكهرباء.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 4. المفاتيح والمقابس ========== -->
+        <div class="category-row reverse">
+            <div class="category-image">
+                <img src="images/electric/keys.jpg" alt="المفاتيح والمقابس">
+            </div>
+            <div class="category-content">
+                <h3 data-key="electricCat4Title"><i class="fas fa-lightbulb"></i> المفاتيح والمقابس</h3>
+                <p class="category-desc" data-key="electricCat4Desc">تشكيلة واسعة من المفاتيح والمقابس الكهربائية
+                    العصرية عالية الجودة.</p>
+
+                <div class="products-showcase">
+                    <button class="products-toggle" data-target="switches-grid">
+                        <span data-key="electricShowProducts">عرض المنتجات</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="switches-grid" class="products-grid-wrapper">
+                        <div class="products-grid">
+                            <div class="product-card" data-img="images/electric/keys/1.avif">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct19">مفاتيح أحادية</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct19Desc">مفاتيح كهربائية أحادية القطب بتصميمات عصرية.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/keys/2.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct20">مفاتيح ثنائية</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct20Desc">مفاتيح ثنائية وثلاثية القطب للتحكم المتعدد.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/keys/3.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct21">مفاتيح ثلاثية</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct21Desc">مفاتيح في صندوق بلاستيكي للحماية من العوامل
+                                        الخارجية.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/keys/4.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct22">افياش كهرباء عادية</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct22Desc">مقابس كهربائية قياسية للاستخدام المنزلي
+                                        والتجاري.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/keys/5.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct23">افياش كهرباء أرضي</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct23Desc">مقابس مع نقطة تأريض للحماية الإضافية.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/keys/6.webp">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct24">افياش USB</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct24Desc">مقابس مع منافذ USB لشحن الأجهزة مباشرة.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 5. أنظمة الإنارة ========== -->
+        <div class="category-row">
+            <div class="category-image">
+                <img src="images/electric/lambs.jpg" alt="أنظمة الإنارة">
+            </div>
+            <div class="category-content">
+                <h3 data-key="electricCat5Title"><i class="fas fa-sun"></i> أنظمة الإنارة</h3>
+                <p class="category-desc" data-key="electricCat5Desc">حلول إنارة متكاملة لتوفير الطاقة وجودة الإضاءة
+                    المثالية.</p>
+
+                <div class="products-showcase">
+                    <button class="products-toggle" data-target="lighting-grid">
+                        <span data-key="electricShowProducts">عرض المنتجات</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="lighting-grid" class="products-grid-wrapper">
+                        <div class="products-grid">
+                            <div class="product-card" data-img="images/electric/light/1.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct25">لمبات LED</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct25Desc">لمبات LED موفرة للطاقة وعمر طويل يصل لـ 50,000
+                                        ساعة.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/light/2.webp">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct26">لمبات موفرة للطاقة</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct26Desc">لمبات فلورسنت مدمجة موفرة للطاقة بتكلفة مناسبة.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/light/3.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct27">أضواء كاشفة (سبوت لايت)</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct27Desc">أضواء كاشفة مركزة للإضاءة المميزة والديكورية.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/light/4.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct28">أضواء لوحة (Panel Light)</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct28Desc">أضواء لوحة مسطحة للأسقف المعلقة والمكاتب.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/light/5.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct29">أعمدة إنارة خارجية</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct29Desc">أعمدة إنارة للحدائق والشوارع بتصميمات متعددة.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/light/6.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct30">إنارة الطوارئ</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct30Desc">أجهزة إنارة تعمل بالبطارية للحالات الطارئة.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 6. معدات الحماية ========== -->
+        <div class="category-row reverse">
+            <div class="category-image">
+                <img src="images/electric/protect.jpg" alt="معدات الحماية">
+            </div>
+            <div class="category-content">
+                <h3 data-key="electricCat6Title"><i class="fas fa-hard-hat"></i> معدات الحماية</h3>
+                <p class="category-desc" data-key="electricCat6Desc">معدات السلامة والحماية الكهربائية للعاملين
+                    والمشاريع.</p>
+
+                <div class="products-showcase">
+                    <button class="products-toggle" data-target="safety-grid">
+                        <span data-key="electricShowProducts">عرض المنتجات</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="safety-grid" class="products-grid-wrapper">
+                        <div class="products-grid">
+                            <div class="product-card" data-img="images/electric/safety/glfs.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct31">قفازات عازلة</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct31Desc">قفازات عازلة للكهرباء لحماية العاملين.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/safety/shoes.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct32">أحذية عازلة</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct32Desc">أحذية أمان عازلة للكهرباء ومقاومة للانزلاق.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/safety/helmt.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct33">خوذات أمان</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct33Desc">خوذات أمان عازلة ومقاومة للصدمات.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/safety/volteg.webp">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct34">أجهزة كشف التيار</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct34Desc">أجهزة محمولة لكشف التيار والجهد الكهربائي.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/safety/danger.png">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct35">لافتات تحذيرية</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct35Desc">لافتات تحذيرية لمخاطر الكهرباء لسلامة الجميع.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/safety/firepoder.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct36">طفايات حرائق كهربائية</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct36Desc">طفايات حرائق مناسبة للحرائق الكهربائية.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== 7. أنظمة التحكم ========== -->
+        <div class="category-row">
+            <div class="category-image">
+                <img src="images/electric/controls.jpg" alt="أنظمة التحكم">
+            </div>
+            <div class="category-content">
+                <h3 data-key="electricCat7Title"><i class="fas fa-microchip"></i> أنظمة التحكم</h3>
+                <p class="category-desc" data-key="electricCat7Desc">أجهزة ومعدات التحكم الآلي في الأنظمة الكهربائية.
+                </p>
+
+                <div class="products-showcase">
+                    <button class="products-toggle" data-target="control-grid">
+                        <span data-key="electricShowProducts">عرض المنتجات</span> <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="control-grid" class="products-grid-wrapper">
+                        <div class="products-grid">
+                            <div class="product-card" data-img="images/electric/control/1.png">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct37">مرحلات (Relays)</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct37Desc">مرحلات كهربائية للتحكم في الدوائر عن بعد.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/control/2.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct38">كونتاكتورات (Contactors)</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct38Desc">كونتاكتورات للتحكم في الأحمال الكهربائية
+                                        الكبيرة.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/control/3.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct39">تايمرات (Timers)</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct39Desc">تايمرات برمجية للتحكم الزمني في الدوائر
+                                        الكهربائية.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/control/4.avif">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct40">ثرموستاتات</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct40Desc">ثرموستات للتحكم في أنظمة التدفئة والتبريد.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/control/5.jpg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct41">وحدات تحكم PLC</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct41Desc">وحدات تحكم منطقية قابلة للبرمجة للأتمتة
+                                        الصناعية.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card" data-img="images/electric/control/6.jpeg">
+                                <div class="product-card-image">
+                                    <div class="placeholder-icon"><i class="fas fa-image"></i></div>
+                                </div>
+                                <div class="product-card-body">
+                                    <h4 data-key="electricProduct42">أجهزة قياس كهربائية</h4>
+                                    <span class="product-badge" data-key="electricAvailable">متوفر</span>
+                                </div>
+                                <div class="product-card-details">
+                                    <p data-key="electricProduct42Desc">أجهزة قياس الجهد، التيار، والمقاومة بدقة عالية.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="footer-grid">
+            <div>
+                <h3 data-key="footerTitle">كنوز الإنشاء التجارية</h3>
+                <p data-key="footerDesc">متخصصون في توريد مواد السباكة والكهرباء وأنظمة الحريق للمشاريع السكنية
+                    والتجارية، نعمل على تحقيق أعلى معايير الجودة والموثوقية.</p>
+            </div>
+            <div>
+                <h3 data-key="footerLinks">روابط الموقع</h3>
+                <a href="index.html" data-key="home">الرئيسية</a>
+                <a href="about.html">من نحن</a>
+                <a href="projects.html">المشاريع</a>
+                <a href="products.html">الأقسام</a>
+            </div>
+            <div>
+                <h3 data-key="contactTitle">تواصل معنا</h3>
+                <p><i class="fab fa-whatsapp"></i> واتساب: <span dir="ltr">+966 55 123 4567</span></p>
+                <p><i class="far fa-envelope"></i> info@konouz.sa</p>
+                <p><i class="fas fa-map-marker-alt"></i> <span data-key="location">مكة - المملكة العربية
+                        السعودية</span></p>
+            </div>
+        </div>
+        <p class="copyright">© 2025 <span data-key="copyright">كنوز الإنشاء التجارية. جميع الحقوق محفوظة</span></p>
+    </footer>
+
+    <a href="https://wa.me/966551234567" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // ===== 1. زر عرض/إخفاء المنتجات =====
+            const toggles = document.querySelectorAll('.products-toggle');
+
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    const targetId = this.getAttribute('data-target');
+                    const targetGrid = document.getElementById(targetId);
+                    const allGrids = document.querySelectorAll('.products-grid-wrapper');
+                    const allToggles = document.querySelectorAll('.products-toggle');
+
+                    if (targetGrid.classList.contains('show')) {
+                        targetGrid.classList.remove('show');
+                        this.classList.remove('active');
+                    } else {
+                        allGrids.forEach(grid => grid.classList.remove('show'));
+                        allToggles.forEach(t => t.classList.remove('active'));
+
+                        targetGrid.classList.add('show');
+                        this.classList.add('active');
+                    }
+                });
+            });
+
+            // ===== 2. فتح أول قسم بشكل افتراضي =====
+            const firstToggle = document.querySelector('.products-toggle');
+            if (firstToggle) {
+                setTimeout(() => {
+                    firstToggle.click();
+                }, 300);
+            }
+
+            // ===== 3. تحميل الصور في البطاقات =====
+            const productCards = document.querySelectorAll('.product-card');
+
+            productCards.forEach(card => {
+                const imgSrc = card.getAttribute('data-img');
+                const imageContainer = card.querySelector('.product-card-image');
+
+                if (imgSrc && imageContainer) {
+                    const img = document.createElement('img');
+                    img.src = imgSrc;
+                    img.alt = card.querySelector('.product-card-body h4')?.innerText || 'صورة المنتج';
+                    img.loading = 'lazy';
+
+                    imageContainer.innerHTML = '';
+                    imageContainer.appendChild(img);
+                }
+            });
+
+            // ===== 4. الضغط على البطاقة لإظهار التفاصيل =====
+            productCards.forEach(card => {
+                card.addEventListener('click', function (e) {
+                    if (e.target.closest('.detail-btn') || e.target.closest('a')) return;
+
+                    const grid = this.closest('.products-grid');
+                    if (grid) {
+                        const siblings = grid.querySelectorAll('.product-card.expanded');
+                        siblings.forEach(s => {
+                            if (s !== this) s.classList.remove('expanded');
+                        });
+                    }
+
+                    this.classList.toggle('expanded');
+                });
+            });
+
+            // ===== 5. منع انتشار الضغط على الأزرار الداخلية =====
+            document.querySelectorAll('.detail-btn').forEach(btn => {
+                btn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    console.log('طلب عرض سعر للمنتج:', this.closest('.product-card').querySelector('h4')
+                        ?.innerText);
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>

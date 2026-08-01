@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>أقسام المنتجات | كنوز الإنشاء التجارية - سباكة، كهرباء، أنظمة حريق</title>
+    <meta name="description"
+        content="استكشف أقسام منتجاتنا في كنوز الإنشاء التجارية: مواد السباكة، المواد الكهربائية، وأنظمة الحريق المعتمدة. جميع المنتجات بأعلى معايير الجودة.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        media="all" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* تنسيقات صفحة الأقسام - نسخة محسّنة */
+        .products-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 140px 7% 60px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .products-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/hero/products.jpg') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .products-hero>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        .products-hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .products-hero h1 i {
+            color: var(--primary);
+            margin-right: 8px;
+        }
+
+        .products-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* قسم الأقسام الرئيسية */
+        .sections-container {
+            padding: 5rem 7%;
+            background: var(--gray-bg);
+        }
+
+        /* شريط إحصائي سريع */
+        .stats-banner {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            background: var(--card-bg);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-bottom: 4rem;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+        }
+
+        .stats-banner .stat-item .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stats-banner .stat-item .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* بطاقة القسم الرئيسية - تصميم محسّن */
+        .section-card {
+            display: flex;
+            align-items: stretch;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            background: var(--card-bg);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .section-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--card-shadow-hover);
+            border-color: var(--primary);
+        }
+
+        .section-card.reverse {
+            flex-direction: row-reverse;
+        }
+
+        /* صورة القسم */
+        .section-image {
+            flex: 1;
+            min-height: 320px;
+            overflow: hidden;
+            position: relative;
+            background: var(--gray-light);
+        }
+
+        .section-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .section-card:hover .section-image img {
+            transform: scale(1.05);
+        }
+
+        .section-image .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+            padding: 2rem 1.5rem 1rem;
+        }
+
+        .section-image .image-overlay .product-count {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.85rem;
+        }
+
+        .section-image .image-overlay .product-count i {
+            margin-left: 6px;
+        }
+
+        /* محتوى القسم */
+        .section-content {
+            flex: 1.2;
+            padding: 2.5rem 2.5rem 2.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-card.reverse .section-content {
+            padding: 2.5rem 1.5rem 2.5rem 2.5rem;
+        }
+
+        .section-icon-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .section-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .section-icon i {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .section-icon-wrapper .section-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .section-content h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-content h2 span {
+            color: var(--primary);
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+
+        .features-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--gray-light);
+            padding: 0.3rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+        }
+
+        .feature-item i {
+            color: var(--primary);
+            font-size: 0.7rem;
+        }
+
+        .section-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .section-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .section-btn:hover {
+            background: var(--primary-dark);
+            transform: translateX(-4px);
+            gap: 0.9rem;
+        }
+
+        .section-btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: transparent;
+            color: var(--text-dark);
+            padding: 0.7rem 1.8rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--border-light);
+            font-size: 0.95rem;
+        }
+
+        .section-btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateX(-4px);
+        }
+
+        /* أقسام إضافية (خدمات) */
+        .extra-services {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .extra-title {
+            text-align: center;
+            font-size: 1.6rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .extra-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 1.2rem;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--card-shadow);
+            border-bottom: 3px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--card-shadow-hover);
+            border-bottom-color: var(--primary);
+        }
+
+        .service-card .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--primary);
+        }
+
+        .service-card:hover .service-icon i {
+            color: white;
+        }
+
+        .service-card .service-icon i {
+            font-size: 1.8rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .service-card h4 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.4rem;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* CTA أسفل الصفحة */
+        .cta-bottom {
+            margin-top: 4rem;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+            border-radius: 1.5rem;
+            padding: 3rem;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-bottom h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .cta-bottom p {
+            opacity: 0.85;
+            margin-bottom: 1.8rem;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-bottom .cta-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .cta-bottom .cta-link:hover {
+            background: var(--primary-dark);
+            transform: translateX(-5px);
+            gap: 1rem;
+        }
+
+        /* التجاوب */
+        @media (max-width: 950px) {
+
+            .section-card,
+            .section-card.reverse {
+                flex-direction: column;
+            }
+
+            .section-image {
+                min-height: 220px;
+                order: -1;
+            }
+
+            .section-content {
+                padding: 1.8rem !important;
+                text-align: center;
+            }
+
+            .section-icon-wrapper {
+                justify-content: center;
+            }
+
+            .features-list {
+                justify-content: center;
+            }
+
+            .section-actions {
+                justify-content: center;
+            }
+
+            .sections-container {
+                padding: 3rem 5%;
+            }
+
+            .stats-banner {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .cta-bottom {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .section-content h2 {
+                font-size: 1.4rem;
+            }
+
+            .features-list {
+                gap: 0.4rem;
+            }
+
+            .feature-item {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.7rem;
+            }
+
+            .section-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .section-btn,
+            .section-btn-outline {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .products-hero p {
+                font-size: 1rem;
+            }
+
+            .stats-banner .stat-item .stat-number {
+                font-size: 1.6rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar" id="navbar">
+        <div class="logo" id="logoLink" style="cursor: pointer;">
+            <div class="logo-icon">
+                <i class="fas fa-gem"></i>
+            </div>
+            <div class="logo-text">
+                <span class="logo-main">كنوز</span>
+                <span class="logo-sub">الإنشاء التجارية</span>
+            </div>
+        </div>
+        <div class="nav-controls">
+            <div class="dark-mode-toggle">
+                <i class="fas fa-moon" id="darkModeIcon"></i>
+            </div>
+            <div class="lang-switch">
+                <button class="lang-btn" id="langToggle">EN</button>
+            </div>
+        </div>
+        <nav id="mainNav">
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html">من نحن</a>
+            <a href="products.html">الأقسام</a>
+            <a href="projects.html">المشاريع</a>
+            <a href="contact.html" class="contact-btn">تواصل معنا</a>
+        </nav>
+        <div class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="products-hero">
+        <h1 data-key="productsHeroTitle">أقسام المنتجات <i class="fas fa-cubes"></i></h1>
+        <p data-key="productsHeroDesc">نوفر مجموعة متكاملة من المواد عالية الجودة في مجالات السباكة، الكهرباء، وأنظمة
+            الحريق، لدعم مشاريعك بثقة وكفاءة.</p>
+    </section>
+
+    <section class="sections-container">
+
+        <!-- شريط إحصائي سريع -->
+        <div class="stats-banner">
+            <div class="stat-item">
+                <span class="stat-number">1000+</span>
+                <span class="stat-label" data-key="productsStat1">منتج متوفر</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">30+</span>
+                <span class="stat-label" data-key="productsStat2">مورد معتمد</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">15+</span>
+                <span class="stat-label" data-key="productsStat3">عام خبرة</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-label" data-key="productsStat4">مشروع منجز</span>
+            </div>
+        </div>
+
+        <!-- قسم السباكة -->
+        <div class="section-card">
+            <div class="section-image">
+                <img src="images/pump2.jpeg" alt="مواد السباكة">
+                <div class="image-overlay">
+                    <span class="product-count"><i class="fas fa-box"></i> 350+ منتج</span>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="section-icon-wrapper">
+                    <div class="section-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <span class="section-label" data-key="productsPlumbingLabel">القسم الأول</span>
+                </div>
+                <h2 data-key="productsPlumbingTitle">مواد <span>السباكة</span></h2>
+                <p class="section-desc" data-key="productsPlumbingDesc">نقدم أحدث تقنيات السباكة للمشاريع السكنية
+                    والتجارية، تشمل أنابيب PPR وPVC وCPVC، fittings، مضخات، وأدوات صحية من أفضل الماركات العالمية.</p>
+                <div class="features-list">
+                    <span class="feature-item"><i class="fas fa-check-circle"></i> <span
+                            data-key="productsPlumbingFeature1">مواسير ووصلات</span></span>
+                    <span class="feature-item"><i class="fas fa-check-circle"></i> <span
+                            data-key="productsPlumbingFeature2">محابس وخلاطات</span></span>
+                    <span class="feature-item"><i class="fas fa-check-circle"></i> <span
+                            data-key="productsPlumbingFeature3">مضخات وخزانات</span></span>
+                    <span class="feature-item"><i class="fas fa-check-circle"></i> <span
+                            data-key="productsPlumbingFeature4">أنظمة صرف صحي</span></span>
+                    <span class="feature-item"><i class="fas fa-check-circle"></i> <span
+                            data-key="productsPlumbingFeature5">عوازل حرارية</span></span>
+                </div>
+                <div class="section-actions">
+                    <a href="plumbing.html" class="section-btn" data-key="productsPlumbingBtn">استكشف القسم <i
+                            class="fas fa-arrow-left"></i></a>
+                    <a href="contact.html" class="section-btn-outline"><i class="fas fa-phone"></i> <span
+                            data-key="productsPlumbingQuote">اطلب عرض سعر</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم الكهرباء -->
+        <div class="section-card reverse">
+            <div class="section-image">
+                <img src="images/elc2.jpeg" alt="المواد الكهربائية">
+                <div class="image-overlay">
+                    <span class="product-count"><i class="fas fa-box"></i> 400+ منتج</span>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="section-icon-wrapper">
+                    <div class="section-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <span class="section-label" data-key="productsElectricLabel">القسم الثاني</span>
+                </div>
+                <h2 data-key="productsElectricTitle">المواد <span>الكهربائية</span></h2>
+                <p class="section-desc" data-key="productsElectricDesc">جميع مستلزمات الكهرباء من كابلات معزولة، قواطع،
+                    لوحات توزيع، ومفاتيح ذكية. نعتمد أعلى معايير الأمان والكفاءة للمشاريع الضخمة والمباني السكنية.</p>
+                <div class="features-list">
+                    <span class="feature-item"><i class="fas fa-check-circle"></i> <span
+                            data-key="productsElectricFeature1">أسلاك وكابلات</span></span>
+                    <span class="feature-item"><i class="fas fa-check-circle"></i> <span
+                            data-key="productsElectricFeature2">قواطع كهربائية</span></span>
+                    <span class="feature-item"><i class="fas fa-check-circle"></i> <span
+                            data-key="productsElectricFeature3">لوحات توزيع</span></span>
+                    <span class="feature-item"><i class="fas fa-check-circle"></i> <span
+                            data-key="productsElectricFeature4">مفاتيح ومقابس</span></span>
+                    <span class="feature-item"><i class="fas fa-check-circle"></i> <span
+                            data-key="productsElectricFeature5">أنظمة إنارة LED</span></span>
+                </div>
+                <div class="section-actions">
+                    <a href="electric.html" class="section-btn" data-key="productsElectricBtn">استكشف القسم <i
+                            class="fas fa-arrow-left"></i></a>
+                    <a href="contact.html" class="section-btn-outline"><i class="fas fa-phone"></i> <span
+                            data-key="productsElectricQuote">اطلب عرض سعر</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- قسم الحريق -->
+        <div class="section-card">
+            <div class="section-image">
+                <img src="images/fire2.jpeg" alt="أنظمة الحريق">
+                <div class="image-overlay">
+                    <span class="product-count"><i class="fas fa-box"></i> 250+ منتج</span>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="section-icon-wrapper">
+                    <div class="section-icon">
+                        <i class="fas fa-fire-extinguisher"></i>
+                    </div>
+                    <span class="section-label" data-key="productsFireLabel">القسم الثالث</span>
+                </div>
+                <h2 data-key="productsFireTitle">أنظمة <span>الحريق</span></h2>
+                <p class="section-desc" data-key="productsFireDesc">أنظمة حريق معتمدة من الدفاع المدني، تشمل رشاشات
+                    أوتوماتيكية، أجهزة إنذار متطورة، وطفايات عالية الجودة. نضمن السلامة الكاملة لمشروعاتك.</p>
+                <div class="features-list">
+                    <span class="feature-item"><i class="fas fa-check-circle"></i> <span
+                            data-key="productsFireFeature1">رشاشات أوتوماتيكية</span></span>
+                    <span class="feature-item"><i class="fas fa-check-circle"></i> <span
+                            data-key="productsFireFeature2">أجهزة إنذار وكواشف</span></span>
+                    <span class="feature-item"><i class="fas fa-check-circle"></i> <span
+                            data-key="productsFireFeature3">طفايات حريق</span></span>
+                    <span class="feature-item"><i class="fas fa-check-circle"></i> <span
+                            data-key="productsFireFeature4">مضخات حريق</span></span>
+                    <span class="feature-item"><i class="fas fa-check-circle"></i> <span
+                            data-key="productsFireFeature5">أنظمة إطفاء بالغاز</span></span>
+                </div>
+                <div class="section-actions">
+                    <a href="fire.html" class="section-btn" data-key="productsFireBtn">استكشف القسم <i
+                            class="fas fa-arrow-left"></i></a>
+                    <a href="contact.html" class="section-btn-outline"><i class="fas fa-phone"></i> <span
+                            data-key="productsFireQuote">اطلب عرض سعر</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- خدمات إضافية -->
+        <div class="extra-services">
+            <h3 class="extra-title" data-key="productsExtraTitle">خدمات إضافية</h3>
+            <p class="extra-subtitle" data-key="productsExtraSub">نقدم لك أكثر من مجرد منتجات، خدمات متكاملة لدعم مشروعك
+            </p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h4 data-key="productsService1">شحن وتوصيل</h4>
+                    <p data-key="productsService1Desc">خدمة توصيل سريعة لجميع أنحاء المملكة، مع متابعة دقيقة للشحنات.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h4 data-key="productsService2">دعم فني متخصص</h4>
+                    <p data-key="productsService2Desc">فريق دعم فني جاهز للإجابة عن استفساراتك وتقديم المشورة الفنية.
+                    </p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h4 data-key="productsService3">ضمان الجودة</h4>
+                    <p data-key="productsService3Desc">جميع منتجاتنا معتمدة وتخضع لرقابة جودة صارمة لضمان الأداء.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chalkboard-user"></i>
+                    </div>
+                    <h4 data-key="productsService4">استشارات فنية</h4>
+                    <p data-key="productsService4Desc">استشارات فنية مجانية لمساعدتك في اختيار المنتجات المناسبة
+                        لمشروعك.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA أسفل الصفحة -->
+        <div class="cta-bottom">
+            <h3 data-key="productsCtaTitle">هل تبحث عن منتج معين؟</h3>
+            <p data-key="productsCtaDesc">فريقنا جاهز لمساعدتك في اختيار المواد المناسبة وتوفير عروض أسعار تنافسية
+                لمشروعك.</p>
+            <a href="contact.html" class="cta-link" data-key="productsCtaBtn">تواصل معنا الآن <i
+                    class="fas fa-arrow-left"></i></a>
+        </div>
+
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="footer-grid">
+            <div>
+                <h3 data-key="footerTitle">كنوز الإنشاء التجارية</h3>
+                <p data-key="footerDesc">متخصصون في توريد مواد السباكة والكهرباء وأنظمة الحريق للمشاريع السكنية
+                    والتجارية، نعمل على تحقيق أعلى معايير الجودة والموثوقية.</p>
+            </div>
+            <div>
+                <h3 data-key="footerLinks">روابط الموقع</h3>
+                <a href="index.html" data-key="home">الرئيسية</a>
+                <a href="about.html">من نحن</a>
+                <a href="projects.html">المشاريع</a>
+                <a href="products.html">الأقسام</a>
+            </div>
+            <div>
+                <h3 data-key="contactTitle">تواصل معنا</h3>
+                <p><i class="fab fa-whatsapp"></i> واتساب: <span dir="ltr">+966 55 123 4567</span></p>
+                <p><i class="far fa-envelope"></i> info@konouz.sa</p>
+                <p><i class="fas fa-map-marker-alt"></i> <span data-key="location">مكة - المملكة العربية
+                        السعودية</span></p>
+            </div>
+        </div>
+        <p class="copyright">© 2025 <span data-key="copyright">كنوز الإنشاء التجارية. جميع الحقوق محفوظة</span></p>
+    </footer>
+
+    <a href="https://wa.me/966551234567" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/script.js"></script>
+    <script>
+        // تأثير ظهور البطاقات عند التمرير
+        document.addEventListener('DOMContentLoaded', function () {
+            const cards = document.querySelectorAll('.section-card, .service-card');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition =
+                    `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+
+</html>

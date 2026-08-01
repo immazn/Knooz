@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>تواصل معنا | كنوز الإنشاء التجارية - استفسارات، عروض أسعار</title>
+    <meta name="description"
+        content="تواصل مع كنوز الإنشاء التجارية للاستفسار عن منتجاتنا أو طلب عرض سعر. فريقنا جاهز للإجابة على جميع استفساراتك وتقديم الدعم الفني.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        media="all" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* تنسيقات صفحة تواصل معنا - النسخة النهائية */
+        .contact-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 140px 7% 60px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/hero/contact.jpg') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .contact-hero>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .contact-hero h1 i {
+            color: var(--primary);
+            margin-right: 8px;
+        }
+
+        .contact-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* محتوى الصفحة */
+        .contact-content {
+            padding: 5rem 7%;
+            background: var(--gray-bg);
+        }
+
+        /* شريط الرد السريع */
+        .response-banner {
+            background: var(--card-bg);
+            border-right: 4px solid var(--primary);
+            border-radius: 1rem;
+            padding: 1rem 1.5rem;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        .response-banner i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .response-banner p {
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .response-banner p span {
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* شبكة المعلومات */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            border-radius: 1.5rem;
+            padding: 2rem 1.8rem;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--card-shadow);
+            position: relative;
+            border-bottom: 4px solid transparent;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--card-shadow-hover);
+            border-bottom-color: var(--primary);
+        }
+
+        .contact-card .card-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover .card-icon {
+            background: var(--primary);
+        }
+
+        .contact-card:hover .card-icon i {
+            color: white;
+        }
+
+        .contact-card .card-icon i {
+            font-size: 2rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .contact-card .card-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p {
+            color: var(--text-muted);
+            margin-bottom: 0.2rem;
+            line-height: 1.6;
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .contact-card a:hover {
+            color: var(--primary-dark);
+        }
+
+        .contact-card .phone-detail {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            display: block;
+            margin-top: 0.1rem;
+        }
+
+        /* نموذج الاتصال والخريطة */
+        .form-map-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        /* نموذج الاتصال */
+        .contact-form-wrapper {
+            background: var(--card-bg);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        .contact-form-wrapper .form-header {
+            margin-bottom: 2rem;
+        }
+
+        .contact-form-wrapper .form-header h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .contact-form-wrapper .form-header h3 i {
+            color: var(--primary);
+        }
+
+        .contact-form-wrapper .form-header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 0.3rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .form-group label .required {
+            color: #ef4444;
+            margin-right: 3px;
+        }
+
+        .form-group label .optional {
+            color: var(--text-light);
+            font-weight: 400;
+            font-size: 0.8rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 2px solid var(--border-light);
+            border-radius: 0.8rem;
+            background: var(--gray-light);
+            color: var(--text-dark);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(249, 115, 22, 0.3);
+        }
+
+        .submit-btn i {
+            font-size: 1.1rem;
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            padding: 0.8rem 1rem;
+            border-radius: 0.8rem;
+            text-align: center;
+            display: none;
+            font-weight: 500;
+        }
+
+        .form-message.success {
+            background: #22c55e20;
+            color: #22c55e;
+            border: 1px solid #22c55e;
+            display: block;
+        }
+
+        .form-message.error {
+            background: #ef444420;
+            color: #ef4444;
+            border: 1px solid #ef4444;
+            display: block;
+        }
+
+        /* الخريطة */
+        .map-wrapper {
+            background: var(--card-bg);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+
+        .map-wrapper .map-header {
+            padding: 1.5rem 1.5rem 0;
+        }
+
+        .map-wrapper .map-header h3 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .map-wrapper .map-header h3 i {
+            color: var(--primary);
+        }
+
+        .map-wrapper .map-header .address-detail {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            display: block;
+            padding-right: 2.3rem;
+        }
+
+        .map-wrapper .map-header .address-detail i {
+            color: var(--primary);
+            margin-left: 5px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 320px;
+            margin-top: 1rem;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ساعات العمل */
+        .hours-section {
+            background: var(--card-bg);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            margin-bottom: 4rem;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+        }
+
+        .hours-section .hours-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hours-section .hours-header i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .hours-section .hours-header h3 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+        }
+
+        .hours-grid {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .hour-item {
+            text-align: center;
+        }
+
+        .hour-item .hour-day {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .hour-item .hour-time {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .hour-item .hour-time.closed {
+            color: #ef4444;
+            font-weight: 600;
+        }
+
+        .hour-item .hour-badge {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            margin-top: 0.3rem;
+        }
+
+        /* الأسئلة الشائعة */
+        .faq-section {
+            margin-bottom: 4rem;
+        }
+
+        .faq-section .faq-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .faq-section .faq-header h2 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .faq-section .faq-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .faq-section .faq-header p {
+            color: var(--text-muted);
+            margin-top: 1.2rem;
+            font-size: 1.05rem;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: 1.2rem;
+            padding: 1.8rem;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border-right: 4px solid transparent;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--card-shadow-hover);
+            border-right-color: var(--primary);
+        }
+
+        .faq-item .faq-question {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item .faq-question i {
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .faq-item .faq-question h4 {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+        }
+
+        .faq-item .faq-answer {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            padding-right: 2rem;
+        }
+
+        /* CTA - نهاية الصفحة */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 1.5rem;
+            padding: 3.5rem 3rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -10%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+        }
+
+        .cta-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section p {
+            opacity: 0.9;
+            margin-bottom: 1.8rem;
+            font-size: 1.05rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+            line-height: 1.8;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: white;
+            color: var(--primary-dark);
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        /* واتساب فلوتر */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            background: #25D366;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s;
+            z-index: 1100;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.08);
+            background: #20b859;
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                padding: 3rem 5%;
+            }
+
+            .form-map-section {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-wrapper {
+                padding: 1.8rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hours-grid {
+                gap: 2rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .cta-section h2 {
+                font-size: 1.4rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .map-wrapper .map-header .address-detail {
+                padding-right: 0;
+                margin-top: 0.3rem;
+            }
+
+            .response-banner {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .contact-card {
+                padding: 1.2rem;
+            }
+
+            .contact-card .card-icon {
+                width: 55px;
+                height: 55px;
+            }
+
+            .contact-card .card-icon i {
+                font-size: 1.5rem;
+            }
+
+            .contact-card h3 {
+                font-size: 1rem;
+            }
+
+            .contact-hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar" id="navbar">
+        <div class="logo" id="logoLink" style="cursor: pointer;">
+            <div class="logo-icon">
+                <i class="fas fa-gem"></i>
+            </div>
+            <div class="logo-text">
+                <span class="logo-main">كنوز</span>
+                <span class="logo-sub">الإنشاء التجارية</span>
+            </div>
+        </div>
+        <div class="nav-controls">
+            <div class="dark-mode-toggle">
+                <i class="fas fa-moon" id="darkModeIcon"></i>
+            </div>
+            <div class="lang-switch">
+                <button class="lang-btn" id="langToggle">EN</button>
+            </div>
+        </div>
+        <nav id="mainNav">
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html">من نحن</a>
+            <a href="products.html">الأقسام</a>
+            <a href="projects.html">المشاريع</a>
+            <a href="contact.html" class="contact-btn">تواصل معنا</a>
+        </nav>
+        <div class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="contact-hero">
+        <h1 data-key="contactHeroTitle">تواصل معنا <i class="fas fa-headset"></i></h1>
+        <p data-key="contactHeroDesc">فريقنا جاهز للإجابة عن استفساراتك، وتقديم عروض الأسعار، ومساعدتك في اختيار
+            المنتجات المناسبة لمشروعك. تواصل معنا بالطريقة التي تناسبك.</p>
+    </section>
+
+    <section class="contact-content">
+
+        <!-- شريط الرد السريع -->
+        <div class="response-banner">
+            <i class="fas fa-clock"></i>
+            <p data-key="contactResponse">نلتزم بالرد على جميع الاستفسارات خلال ساعات العمل <span
+                    data-key="contactResponseSpan">في أسرع وقت ممكن.</span></p>
+        </div>
+
+        <!-- معلومات التواصل -->
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="card-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="card-label" data-key="contactSales"> </div>
+                <h3 data-key="contactPhone">رقم الهاتف</h3>
+                <p><a href="tel:+966551234567"><span dir="ltr">+966 55 123 4567</span></a></p>
+
+            </div>
+            <div class="contact-card">
+                <div class="card-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="card-label" data-key="contactWhatsappLabel">تواصل فوري</div>
+                <h3 data-key="contactWhatsappTitle">واتساب</h3>
+                <p><a href="https://wa.me/966551234567" target="_blank"><span dir="ltr">+966 55 123 4567</span></a></p>
+                <p style="font-size:0.85rem;color:var(--text-light);" data-key="contactWhatsappDesc">تواصل معنا مباشرة
+                    للحصول على رد سريع.</p>
+            </div>
+            <div class="contact-card">
+                <div class="card-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="card-label" data-key="contactEmailLabel">أرسل بريداً</div>
+                <h3 data-key="contactEmailTitle">البريد الإلكتروني</h3>
+                <p><a href="mailto:info@konouz.sa">info@konouz.sa</a></p>
+                <p><a href="mailto:sales@konouz.sa">sales@konouz.sa</a></p>
+            </div>
+        </div>
+
+        <!-- نموذج الاتصال والخريطة -->
+        <div class="form-map-section">
+            <!-- نموذج الاتصال -->
+            <div class="contact-form-wrapper">
+                <div class="form-header">
+                    <h3><i class="fas fa-paper-plane"></i> <span data-key="contactFormTitle">أرسل لنا رسالة</span></h3>
+                    <p data-key="contactFormSub">املأ النموذج وسنرد عليك في أقرب وقت</p>
+                </div>
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-key="contactFormName">الاسم الكامل <span class="required">*</span></label>
+                            <input type="text" id="name" data-key="contactFormNamePlaceholder" placeholder="أدخل اسمك"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label data-key="contactFormPhone">رقم الجوال <span class="required">*</span></label>
+                            <input type="tel" id="phone" data-key="contactFormPhonePlaceholder"
+                                placeholder="أدخل رقم جوالك" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-key="contactFormEmail">البريد الإلكتروني</label>
+                            <input type="email" id="email" data-key="contactFormEmailPlaceholder"
+                                placeholder="example@domain.com">
+                        </div>
+                        <div class="form-group">
+                            <label data-key="contactFormCompany">اسم الشركة <span class="optional"
+                                    data-key="contactFormCompanyOptional">(اختياري)</span></label>
+                            <input type="text" id="company" data-key="contactFormCompanyPlaceholder"
+                                placeholder="اسم شركتك">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-key="contactFormInquiry">نوع الاستفسار <span class="required">*</span></label>
+                        <select id="inquiryType" required>
+                            <option value="" data-key="contactFormInquiryPlaceholder">اختر نوع الاستفسار</option>
+                            <option value="quote" data-key="contactFormInquiryQuote">طلب عرض سعر</option>
+                            <option value="products" data-key="contactFormInquiryProducts">استفسار عن منتج</option>
+                            <option value="projects" data-key="contactFormInquiryProjects">استفسار عن مشروع</option>
+                            <option value="support" data-key="contactFormInquirySupport">دعم فني</option>
+                            <option value="other" data-key="contactFormInquiryOther">استفسار عام</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label data-key="contactFormMessage">الرسالة <span class="required">*</span></label>
+                        <textarea id="message" data-key="contactFormMessagePlaceholder"
+                            placeholder="اكتب رسالتك بالتفصيل..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> <span data-key="contactFormSubmit">إرسال الرسالة</span>
+                    </button>
+                    <div id="formMessage" class="form-message"></div>
+                </form>
+            </div>
+
+            <!-- الخريطة -->
+            <div class="map-wrapper">
+                <div class="map-header">
+                    <h3><i class="fas fa-map"></i> <span data-key="contactMapTitle">موقعنا</span></h3>
+                    <span class="address-detail"><i class="fas fa-location-dot"></i> <span
+                            data-key="contactMapAddress">الرياض - طريق الملك فهد، حي المغرزات</span></span>
+                    <span class="address-detail" style="font-size:0.85rem;color:var(--text-light);padding-right:2.3rem;"
+                        data-key="contactMapCountry">المملكة العربية السعودية</span>
+                </div>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.758100614422!2d46.6752596!3d24.7361135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f046dc3f4d2d1%3A0x8b2e5e8c5b8c5b8c!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sen!2ssa!4v1700000000000!5m2!1sar!2ssa"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- ساعات العمل -->
+        <div class="hours-section">
+            <div class="hours-header">
+                <i class="fas fa-clock"></i>
+                <h3 data-key="contactHoursTitle">ساعات العمل</h3>
+            </div>
+            <div class="hours-grid">
+                <div class="hour-item">
+                    <div class="hour-day" data-key="contactHoursWeek">السبت - الخميس</div>
+                    <div class="hour-time" data-key="contactHoursWeekTime">8:00 صباحاً – 6:00 مساءً</div>
+                </div>
+                <div class="hour-item">
+                    <div class="hour-day" data-key="contactHoursFriday">الجمعة</div>
+                    <div class="hour-time closed" data-key="contactHoursFridayClosed">مغلق</div>
+                </div>
+                <div class="hour-item">
+                    <div class="hour-day" data-key="contactHoursSupport">خدمة العملاء</div>
+                    <div class="hour-time" data-key="contactHoursSupportTime">متاحة على مدار الساعة</div>
+                    <span class="hour-badge"><i class="fas fa-headset"></i> <span data-key="contactHoursBadge">دعم
+                            فوري</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- الأسئلة الشائعة -->
+        <div class="faq-section">
+            <div class="faq-header">
+                <h2 data-key="contactFaqTitle">أسئلة شائعة</h2>
+                <p data-key="contactFaqSub">إجابات لأكثر الأسئلة التي تهم عملاءنا</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h4 data-key="contactFaq1Q">كم تستغرق عملية التوريد؟</h4>
+                    </div>
+                    <div class="faq-answer" data-key="contactFaq1A">تختلف المدة حسب حجم الطلب ونوع المنتجات، لكننا نحرص
+                        على الالتزام بالجدول الزمني المتفق عليه في كل مشروع.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h4 data-key="contactFaq2Q">هل تقدمون ضماناً على المنتجات؟</h4>
+                    </div>
+                    <div class="faq-answer" data-key="contactFaq2A">نعم، جميع منتجاتنا تأتي بضمان الجودة من المصنع، مع
+                        دعم فني متخصص لضمان الأداء الأمثل.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h4 data-key="contactFaq3Q">هل يمكنكم توريد كميات كبيرة؟</h4>
+                    </div>
+                    <div class="faq-answer" data-key="contactFaq3A">بالتأكيد، نتعامل مع المشاريع بمختلف أحجامها ونملك
+                        القدرة على توفير كميات كبيرة وفق احتياجات المشروع.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        <h4 data-key="contactFaq4Q">كيف أحصل على عرض سعر؟</h4>
+                    </div>
+                    <div class="faq-answer" data-key="contactFaq4A">يمكنك ملء نموذج التواصل أو الاتصال بنا مباشرة،
+                        وسنقوم بإعداد عرض سعر مفصل خلال وقت قصير.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2 data-key="contactCtaTitle">هل تحتاج إلى عرض سعر أو استشارة؟</h2>
+            <p data-key="contactCtaDesc">يسعد فريق كنوز الإنشاء التجارية بمساعدتك في اختيار المنتجات المناسبة وتقديم
+                أفضل الحلول لمشروعك.</p>
+            <a href="https://wa.me/966551234567?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%AD%D8%B5%D9%88%D9%84%20%D8%B9%D9%84%D9%89%20%D8%B9%D8%B1%D8%B6%20%D8%B3%D8%B9%D8%B1%20%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9%D9%8A"
+                class="cta-btn" target="_blank">
+                <span data-key="contactCtaBtn">تواصل عبر واتساب</span> <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="footer-grid">
+            <div>
+                <h3 data-key="footerTitle">كنوز الإنشاء التجارية</h3>
+                <p data-key="footerDesc">متخصصون في توريد مواد السباكة والكهرباء وأنظمة الحريق للمشاريع السكنية
+                    والتجارية، نعمل على تحقيق أعلى معايير الجودة والموثوقية.</p>
+            </div>
+            <div>
+                <h3 data-key="footerLinks">روابط الموقع</h3>
+                <a href="index.html" data-key="home">الرئيسية</a>
+                <a href="about.html">من نحن</a>
+                <a href="projects.html">المشاريع</a>
+                <a href="products.html">الأقسام</a>
+            </div>
+            <div>
+                <h3 data-key="contactTitle">تواصل معنا</h3>
+                <p><i class="fab fa-whatsapp"></i> واتساب: <span dir="ltr">+966 55 123 4567</span></p>
+                <p><i class="far fa-envelope"></i> info@konouz.sa</p>
+                <p><i class="fas fa-map-marker-alt"></i> <span data-key="location">مكة - المملكة العربية
+                        السعودية</span></p>
+            </div>
+        </div>
+        <p class="copyright">© 2025 <span data-key="copyright">كنوز الإنشاء التجارية. جميع الحقوق محفوظة</span></p>
+    </footer>
+
+    <!-- واتساب فلوتر -->
+    <a href="https://wa.me/966551234567" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/script.js"></script>
+    <script>
+        // نموذج الاتصال
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const company = document.getElementById('company').value.trim();
+            const inquiryType = document.getElementById('inquiryType').value;
+            const message = document.getElementById('message').value.trim();
+            const formMessage = document.getElementById('formMessage');
+
+            if (!name || !phone || !inquiryType || !message) {
+                const errorMsg = document.querySelector('[data-key="contactFormRequired"]')?.textContent || 'الرجاء تعبئة جميع الحقول المطلوبة';
+                formMessage.textContent = errorMsg;
+                formMessage.className = 'form-message error';
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 3000);
+                return;
+            }
+
+            const inquiryLabels = {
+                'quote': document.querySelector('[data-key="contactFormInquiryQuote"]')?.textContent || 'طلب عرض سعر',
+                'products': document.querySelector('[data-key="contactFormInquiryProducts"]')?.textContent || 'استفسار عن منتج',
+                'projects': document.querySelector('[data-key="contactFormInquiryProjects"]')?.textContent || 'استفسار عن مشروع',
+                'support': document.querySelector('[data-key="contactFormInquirySupport"]')?.textContent || 'دعم فني',
+                'other': document.querySelector('[data-key="contactFormInquiryOther"]')?.textContent || 'استفسار عام'
+            };
+
+            const whatsappMessage = `
+        📋 *استفسار جديد من موقع كنوز الإنشاء*
+
+        👤 *الاسم:* ${name}
+        📱 *الجوال:* ${phone}
+        📧 *البريد الإلكتروني:* ${email || 'غير مضاف'}
+        🏢 *الشركة:* ${company || 'غير مضاف'}
+        📂 *نوع الاستفسار:* ${inquiryLabels[inquiryType] || inquiryType}
+
+        📝 *الرسالة:*
+        ${message}
+        `;
+
+            const whatsappUrl = `https://wa.me/966551234567?text=${encodeURIComponent(whatsappMessage)}`;
+
+            const successMsg = document.querySelector('[data-key="contactFormSuccess"]')?.textContent || '✅ شكراً لتواصلك معنا. تم استلام رسالتك وسيقوم فريقنا بالرد عليك في أقرب وقت.';
+            formMessage.textContent = 'جاري تحويلك إلى واتساب...';
+            formMessage.className = 'form-message success';
+
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+                formMessage.innerHTML = successMsg;
+            }, 800);
+
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+                document.getElementById('contactForm').reset();
+            }, 6000);
+        });
+    </script>
+</body>
+
+</html>

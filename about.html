@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>من نحن | كنوز الإنشاء التجارية - خبرة 15 عاماً في توريد مواد السباكة والكهرباء وأنظمة الحريق</title>
+    <meta name="description"
+        content="تعرف على كنوز الإنشاء التجارية، خبرة 15 عاماً في توريد مواد السباكة والكهرباء وأنظمة الحريق. نلتزم بالجودة والموثوقية في جميع مشاريعنا.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        media="all" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* تنسيقات خاصة بصفحة من نحن - النسخة النهائية المحسّنة */
+        .about-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 140px 7% 80px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/hero/about-bg.jpg') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .about-hero>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .about-hero h1 i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+
+        .about-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* أضف هذا الكود الجديد */
+        .about-hero h2.brand-name {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+            color: white;
+        }
+
+        .about-hero h2.brand-name .highlight {
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        /* إضافة تأثير بسيط لكلمة كنوز */
+        .about-hero h2.brand-name .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .about-hero .hero-subtitle {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 750px;
+            margin: 0.5rem auto 0;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* المحتوى الرئيسي */
+        .about-content {
+            padding: 5rem 7%;
+            background: var(--gray-bg);
+        }
+
+        /* بطاقة التعريف */
+        .intro-card {
+            background: var(--card-bg);
+            border-radius: 1.5rem;
+            padding: 3.5rem 3rem;
+            margin-bottom: 4rem;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .intro-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), #fbbf24);
+        }
+
+        .intro-card h2 {
+            color: var(--text-dark);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-card h2 span {
+            color: var(--primary);
+        }
+
+        .intro-card p {
+            color: var(--text-muted);
+            line-height: 1.9;
+            font-size: 1.05rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        /* ما الذي يميزنا؟ */
+        .features-section {
+            margin-bottom: 4rem;
+        }
+
+        .features-section .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .features-section .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .features-section .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .features-section .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-top: 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-item {
+            background: var(--card-bg);
+            border-radius: 1.2rem;
+            padding: 2rem 1.8rem;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--card-shadow);
+            border-right: 4px solid var(--primary);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .feature-item .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .feature-item .feature-icon i {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .feature-item h4 {
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* مجالات العمل */
+        .work-areas {
+            margin-bottom: 4rem;
+        }
+
+        .work-areas .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .work-areas .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .work-areas .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-item {
+            background: var(--card-bg);
+            border-radius: 1.2rem;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .work-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .work-item .work-icon {
+            padding: 2rem 1.5rem 0.5rem;
+            text-align: center;
+            font-size: 2.8rem;
+            color: var(--primary);
+        }
+
+        .work-item .work-content {
+            padding: 0.5rem 1.8rem 2rem;
+            text-align: center;
+        }
+
+        .work-item .work-content h4 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .work-item .work-content p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        /* الأرقام */
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 1.5rem;
+            padding: 3.5rem 2rem;
+            margin-bottom: 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .stats-section .stats-title {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-box {
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 0.3rem;
+            letter-spacing: 1px;
+        }
+
+        .stat-number .plus-sign {
+            font-size: 2rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        /* لماذا يختارنا عملاؤنا؟ */
+        .why-choose {
+            margin-bottom: 4rem;
+        }
+
+        .why-choose .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .why-choose .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .why-choose .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .why-choose .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-top: 1rem;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .why-item {
+            text-align: center;
+            padding: 1.8rem 1.5rem;
+            background: var(--card-bg);
+            border-radius: 1.2rem;
+            transition: var(--transition);
+            box-shadow: var(--card-shadow);
+        }
+
+        .why-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .why-item .why-icon {
+            width: 55px;
+            height: 55px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.8rem;
+        }
+
+        .why-item .why-icon i {
+            font-size: 1.6rem;
+            color: var(--primary);
+        }
+
+        .why-item h4 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .why-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* شركاء النجاح */
+        .partners-section {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .partners-section h2 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .partners-section h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .partners-section .partners-text {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 1.5rem auto 2rem;
+            line-height: 1.8;
+        }
+
+        .partner-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            padding: 0.5rem 0;
+        }
+
+        .partner-logos .logo-placeholder {
+            background: var(--card-bg);
+            padding: 1.2rem 2.5rem;
+            border-radius: 1rem;
+            box-shadow: var(--card-shadow);
+            font-weight: 700;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            transition: var(--transition);
+            min-width: 140px;
+        }
+
+        .partner-logos .logo-placeholder:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--card-shadow-hover);
+            color: var(--primary);
+        }
+
+        .partner-logos .logo-placeholder i {
+            margin-left: 8px;
+            color: var(--primary);
+        }
+
+        /* كيف نعمل؟ */
+        .how-we-work {
+            margin-bottom: 4rem;
+        }
+
+        .how-we-work .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .how-we-work .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .how-we-work .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .step-item {
+            text-align: center;
+            padding: 1.8rem 1.5rem;
+            background: var(--card-bg);
+            border-radius: 1.2rem;
+            transition: var(--transition);
+            box-shadow: var(--card-shadow);
+            position: relative;
+        }
+
+        .step-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .step-item .step-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 15px;
+        }
+
+        .step-item .step-icon {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .step-item h4 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .step-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* CTA - نهاية الصفحة */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 1.5rem;
+            padding: 3.5rem 3rem;
+            margin-top: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -10%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+        }
+
+        .cta-section h3 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.8rem;
+            font-size: 1.05rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: white;
+            color: var(--primary-dark);
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                padding: 3rem 5%;
+            }
+
+            .intro-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-number {
+                font-size: 2.2rem;
+            }
+
+            .cta-section {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .cta-section h3 {
+                font-size: 1.4rem;
+            }
+
+            .partner-logos {
+                gap: 1.5rem;
+            }
+
+            .partner-logos .logo-placeholder {
+                min-width: 100px;
+                padding: 0.8rem 1.2rem;
+                font-size: 0.95rem;
+            }
+
+            .step-item .step-number {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about-hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar" id="navbar">
+        <div class="logo" id="logoLink" style="cursor: pointer;">
+            <div class="logo-icon">
+                <i class="fas fa-gem"></i>
+            </div>
+            <div class="logo-text">
+                <span class="logo-main">كنوز</span>
+                <span class="logo-sub">الإنشاء التجارية</span>
+            </div>
+        </div>
+        <div class="nav-controls">
+            <div class="dark-mode-toggle">
+                <i class="fas fa-moon" id="darkModeIcon"></i>
+            </div>
+            <div class="lang-switch">
+                <button class="lang-btn" id="langToggle">EN</button>
+            </div>
+        </div>
+        <nav id="mainNav">
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html">من نحن</a>
+            <a href="products.html">الأقسام</a>
+            <a href="projects.html">المشاريع</a>
+            <a href="contact.html" class="contact-btn">تواصل معنا</a>
+        </nav>
+        <div class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="about-hero">
+        <h1 data-key="aboutHeroTitle">من نحن <i class="fas fa-building"></i></h1>
+        <h2 data-key="aboutHeroSub" style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.2rem;">
+            <span style="color: var(--primary);">كنوز</span> الإنشاء التجارية
+        </h2>
+        <p data-key="aboutHeroDesc"
+            style="font-size: 1.15rem; opacity: 0.85; max-width: 750px; margin: 0.5rem auto 0; line-height: 1.8;">
+            شريك موثوق لتوريد مواد السباكة والكهرباء وأنظمة الحريق
+        </p>
+    </section>
+
+    <section class="about-content">
+        <!-- بطاقة التعريف -->
+        <div class="intro-card reveal">
+            <p data-key="aboutIntro">نوفر في كنوز الإنشاء التجارية حلولاً متكاملة في مواد السباكة، والأنظمة الكهربائية،
+                وأنظمة مكافحة الحريق، لخدمة المشاريع السكنية والتجارية والصناعية. ونلتزم بتوفير منتجات موثوقة، وخدمة
+                احترافية، وسرعة في التوريد، بما يدعم نجاح المشاريع في مختلف مراحل التنفيذ.</p>
+        </div>
+
+        <!-- ما الذي يميزنا؟ -->
+        <div class="features-section reveal">
+            <div class="section-header">
+                <h2 data-key="aboutFeaturesTitle">ما الذي يميزنا؟</h2>
+                <p data-key="aboutFeaturesDesc">نعتمد على أسس واضحة تجعلنا الخيار المناسب لتنفيذ المشاريع بكفاءة وثقة.
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+                    <h4 data-key="feature1">جودة معتمدة</h4>
+                    <p data-key="feature1Desc">منتجات مختارة بعناية وفق المواصفات المطلوبة.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-truck-fast"></i></div>
+                    <h4 data-key="feature2">سرعة التوريد</h4>
+                    <p data-key="feature2Desc">توفير احتياجات المشاريع في الوقت المناسب.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-hard-hat"></i></div>
+                    <h4 data-key="feature3">خبرة عملية</h4>
+                    <p data-key="feature3Desc">فهم لاحتياجات المقاولين والاستشاريين.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                    <h4 data-key="feature4">خدمة موثوقة</h4>
+                    <p data-key="feature4Desc">دعم مستمر قبل البيع وبعده.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- مجالات عملنا -->
+        <div class="work-areas reveal">
+            <div class="section-header">
+                <h2 data-key="aboutWorkTitle">مجالات عملنا</h2>
+            </div>
+            <div class="work-grid">
+                <div class="work-item">
+                    <div class="work-icon"><i class="fas fa-water"></i></div>
+                    <div class="work-content">
+                        <h4 data-key="work1">السباكة</h4>
+                        <p data-key="work1Desc">حلول متكاملة لشبكات المياه والصرف الصحي تشمل المواسير، والوصلات،
+                            والمحابس، والمضخات، وجميع الملحقات.</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <div class="work-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="work-content">
+                        <h4 data-key="work2">الكهرباء</h4>
+                        <p data-key="work2Desc">كابلات وأسلاك ولوحات توزيع وقواطع ومستلزمات كهربائية تلبي احتياجات
+                            المشاريع المختلفة.</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <div class="work-icon"><i class="fas fa-fire-extinguisher"></i></div>
+                    <div class="work-content">
+                        <h4 data-key="work3">أنظمة الحريق</h4>
+                        <p data-key="work3Desc">أنظمة ومعدات مكافحة الحريق المصممة لتعزيز السلامة والامتثال للمعايير
+                            المعتمدة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- بالأرقام -->
+        <div class="stats-section reveal">
+            <div class="stats-title" data-key="aboutStatsTitle">أرقام تعكس خبرتنا</div>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">15 <span class="plus-sign">+</span></div>
+                    <div class="stat-label" data-key="stat1">عاماً من الخبرة</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">50 <span class="plus-sign">+</span></div>
+                    <div class="stat-label" data-key="stat2">مشروعاً</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">1000 <span class="plus-sign">+</span></div>
+                    <div class="stat-label" data-key="stat3">منتج</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">30 <span class="plus-sign">+</span></div>
+                    <div class="stat-label" data-key="stat4">مورداً وشريكاً</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- لماذا يختارنا عملاؤنا؟ -->
+        <div class="why-choose reveal">
+            <div class="section-header">
+                <h2 data-key="aboutWhyTitle">لماذا يختارنا عملاؤنا؟</h2>
+                <p data-key="aboutWhyDesc">نعمل وفق معايير واضحة تضمن جودة المنتجات، وسرعة الاستجابة، والالتزام
+                    بالمواعيد، لأننا نؤمن أن الثقة تُبنى بالأداء وليس بالوعود.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-medal"></i></div>
+                    <h4 data-key="why1">الجودة</h4>
+                    <p data-key="why1Desc">منتجات مطابقة للمواصفات</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-handshake"></i></div>
+                    <h4 data-key="why2">الالتزام</h4>
+                    <p data-key="why2Desc">نلتزم بالجودة والمواعيد في كل مشروع</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-shield"></i></div>
+                    <h4 data-key="why3">الموثوقية</h4>
+                    <p data-key="why3Desc">نلتزم بتقديم منتجات وخدمات يمكن الاعتماد عليها في كل مشروع.</p>
+                </div>
+                <div class="why-item">
+                    <div class="why-icon"><i class="fas fa-user-check"></i></div>
+                    <h4 data-key="why4">خدمة العملاء</h4>
+                    <p data-key="why4Desc">دعم احترافي ومستمر</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- كيف نعمل؟ -->
+        <div class="how-we-work reveal">
+            <div class="section-header">
+                <h2 data-key="aboutHowTitle">كيف نعمل؟</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <span class="step-number">01</span>
+                    <div class="step-icon"><i class="fas fa-clipboard-list"></i></div>
+                    <h4 data-key="step1">استلام الطلب</h4>
+                    <p data-key="step1Desc">نستقبل طلبك وندرس متطلبات مشروعك بدقة.</p>
+                </div>
+                <div class="step-item">
+                    <span class="step-number">02</span>
+                    <div class="step-icon"><i class="fas fa-boxes"></i></div>
+                    <h4 data-key="step2">اختيار المنتجات المناسبة</h4>
+                    <p data-key="step2Desc">نقترح أفضل المنتجات التي تناسب احتياجاتك ومواصفات مشروعك.</p>
+                </div>
+                <div class="step-item">
+                    <span class="step-number">03</span>
+                    <div class="step-icon"><i class="fas fa-truck"></i></div>
+                    <h4 data-key="step3">التوريد والتسليم</h4>
+                    <p data-key="step3Desc">نوفر المنتجات ونلتزم بتسليمها في الوقت المتفق عليه.</p>
+                </div>
+                <div class="step-item">
+                    <span class="step-number">04</span>
+                    <div class="step-icon"><i class="fas fa-headset"></i></div>
+                    <h4 data-key="step4">الدعم والمتابعة</h4>
+                    <p data-key="step4Desc">نبقى على تواصل لتقديم الدعم والاستشارات بعد التوريد.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA - نهاية الصفحة -->
+        <div class="cta-section reveal">
+            <h3 data-key="aboutCtaTitle">هل تبحث عن مورد موثوق لمشروعك؟</h3>
+            <p data-key="aboutCtaDesc">يسعد فريق كنوز الإنشاء التجارية بمساعدتك في اختيار المنتجات المناسبة وتقديم حلول
+                تلبي احتياجات مشروعك بكفاءة وجودة.</p>
+            <a href="contact.html" class="cta-btn" data-key="aboutCtaBtn">اطلب عرض سعر <i
+                    class="fas fa-arrow-left"></i></a>
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="footer-grid">
+            <div>
+                <h3 data-key="footerTitle">كنوز الإنشاء التجارية</h3>
+                <p data-key="footerDesc">متخصصون في توريد مواد السباكة والكهرباء وأنظمة الحريق للمشاريع السكنية
+                    والتجارية، نعمل على تحقيق أعلى معايير الجودة والموثوقية.</p>
+            </div>
+            <div>
+                <h3 data-key="footerLinks">روابط الموقع</h3>
+                <a href="index.html" data-key="home">الرئيسية</a>
+                <a href="about.html">من نحن</a>
+                <a href="projects.html">المشاريع</a>
+                <a href="products.html">الأقسام</a>
+            </div>
+            <div>
+                <h3 data-key="contactTitle">تواصل معنا</h3>
+                <p><i class="fab fa-whatsapp"></i> واتساب: <span dir="ltr">+966 55 123 4567</span></p>
+                <p><i class="far fa-envelope"></i> info@konouz.sa</p>
+                <p><i class="fas fa-map-marker-alt"></i> <span data-key="location">مكة - المملكة العربية
+                        السعودية</span></p>
+            </div>
+        </div>
+        <p class="copyright">© 2025 <span data-key="copyright">كنوز الإنشاء التجارية. جميع الحقوق محفوظة</span></p>
+    </footer>
+
+    <a href="https://wa.me/966551234567" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const reveals = document.querySelectorAll('.reveal');
+
+            function checkReveal() {
+                reveals.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        el.classList.add('active');
+                    }
+                });
+            }
+            window.addEventListener('scroll', checkReveal);
+            checkReveal();
+        });
+    </script>
+</body>
+
+</html>
