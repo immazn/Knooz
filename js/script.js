@@ -60,6 +60,15 @@ if (mobileMenuBtn) {
 // Bilingual Support (Arabic/English)
 const translations = {
     ar: {
+        tagHotel: "فندق",
+        tagPlumbing: "سباكة",
+        tagElectric: "كهرباء",
+        tagFire: "أنظمة الحريق",
+        tagCompound: "كومباوند",
+        tagFactory: "مصنع",
+        tagFactorys: "مصانع",
+        viewGallery: "عرض الصور",
+        whatsapp: "واتساب",
         // القائمة العلوية (Navigation)
         navHome: "الرئيسية",
         navAbout: "من نحن",
@@ -698,6 +707,14 @@ const translations = {
     },
 
     en: {
+        tagHotel: "Hotel",
+        tagPlumbing: "Plumbing",
+        tagElectric: "Electric",
+        tagFire: "Fire Systems",
+        tagCompound: "Compound",
+        tagFactorys: "Factorys",
+        viewGallery: "View Images",
+        whatsapp: "WhatsApp",
         // Navigation
         navHome: "Home",
         navAbout: "About Us",
